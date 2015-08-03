@@ -44,7 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\Shenkar_CourseBidSystem\CourseBid_Common;C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\Shenkar_CourseBidSystem\CourseBid_Storage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\CourseBid_Common;$(SolutionDir)\CourseBid_Storage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

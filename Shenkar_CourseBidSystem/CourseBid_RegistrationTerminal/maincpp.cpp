@@ -39,7 +39,6 @@ int main(int argc, char* argv[])
 {
 	cout << "Welcome to course bid - REGISTRATION TERMINAL Shenkar!!" << endl;
 
-
 	//DEMO CALLS TO VERIFY COMPILATION
 	FileStorage * fs = new FileStorage();
 	UIScreen * uis = new UserLoginScreen();
