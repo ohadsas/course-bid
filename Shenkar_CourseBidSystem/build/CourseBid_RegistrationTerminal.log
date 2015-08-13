@@ -1,0 +1,38 @@
+﻿Build started 8/10/2015 11:10:42 PM.
+     1>Project "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\CourseBid_RegistrationTerminal\CourseBid_RegistrationTerminal.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\CourseBid_Common" /I"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\CourseBid_Storage" /I"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\CourseBid_UI" /I"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\Shenkar_CourseBidSystem\CourseBid_Utils" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\\" /Fd"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\CourseBid_Common\AssignmentCalculator.cpp ..\CourseBid_Common\Course.cpp ..\CourseBid_Common\Student.cpp ..\CourseBid_Common\Technician.cpp ..\CourseBid_Storage\FileStorage.cpp InsertAssignitionFileScreen.cpp maincpp.cpp PointDistributionScreen.cpp RegistrationTerminal.cpp StudentMainScreen.cpp TechnicianMainScreen.cpp TechnitianAssignitionResultsScreen.cpp UserLoginScreen.cpp
+         UserLoginScreen.cpp
+         TechnitianAssignitionResultsScreen.cpp
+         TechnicianMainScreen.cpp
+         StudentMainScreen.cpp
+         RegistrationTerminal.cpp
+         PointDistributionScreen.cpp
+         maincpp.cpp
+         InsertAssignitionFileScreen.cpp
+         FileStorage.cpp
+         Technician.cpp
+         Student.cpp
+         Course.cpp
+         AssignmentCalculator.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\CourseBid_RegistrationTerminal.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\CourseBid_RegistrationTerminal.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\CourseBid_RegistrationTerminal.lib" /MACHINE:X86 "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\AssignmentCalculator.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\Course.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\Student.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\Technician.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\FileStorage.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\InsertAssignitionFileScreen.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\maincpp.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\PointDistributionScreen.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\RegistrationTerminal.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\StudentMainScreen.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\TechnicianMainScreen.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\TechnitianAssignitionResultsScreen.obj"
+         "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\UserLoginScreen.obj"
+         CourseBid_RegistrationTerminal.vcxproj -> C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\\build\CourseBid_RegistrationTerminal.exe
+     1>Done Building Project "C:\Users\gleyz_000\Documents\Visual Studio 2013\Projects\github\course-bid\Shenkar_CourseBidSystem\CourseBid_RegistrationTerminal\CourseBid_RegistrationTerminal.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:12.36

@@ -26,7 +26,7 @@ public:
 	
 	/* NON IMPLEMENTED STORAGE METHODS - NEED OVERRIDE*/
 	vector<char> getAll(int serial);
-	void save(vector<char> line);
+	void save(string line);
 	void deleteObj(long id);
 	long generateId();					//get unique id for a new object stored
 };

@@ -14,18 +14,20 @@
 #include <iostream>
 #include <vector>
 #include <cstdint>
+#include <string>
 using namespace std;
 #include "IStorage.h"
 
 class FileStorage : public IStorage {
 private:
-	
+	string filename = "..\\db.xml";
+	vector<string> buffer;
 public:
 	FileStorage();
 	//override parent
 	vector<char> getAll(int serial); 
 	//override parent
-	void save(vector<char> line);
+	void save(string line);
 	//override parent
 	void deleteObj(long id); 
 	//override parent

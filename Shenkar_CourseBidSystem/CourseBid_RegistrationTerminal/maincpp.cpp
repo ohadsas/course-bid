@@ -33,12 +33,22 @@ using namespace std;
 #include "CoursePair.h"
 #include "PointDistributionScreen.h"
 #include "AssignmentCalculator.h"
+#include "FileStorage.h"
 
 //REGISTRATION TERMINAL
 int main(int argc, char* argv[])
 {
 	cout << "Welcome to course bid - REGISTRATION TERMINAL Shenkar!!" << endl;
 
+	Course * c = new Course(123, NULL);
+	c->save(false);
+	Course * c2 = new Course(123, NULL);
+	c2->save(false);
+
+	FileStorage * fs = new FileStorage();
+	fs->save("<obj><serial=\"1470\">");
+
+	/*
 	//DEMO CALLS TO VERIFY COMPILATION
 	FileStorage * fs = new FileStorage();
 	UIScreen * uis = new UserLoginScreen();
@@ -53,7 +63,7 @@ int main(int argc, char* argv[])
 
 	UIScreen * uiss = new PointDistributionScreen();
 	AssignmentCalculator * ac = new AssignmentCalculator();
-
+	*/
 	system("pause");
 
 }

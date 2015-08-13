@@ -13,6 +13,8 @@
 
 #include <iostream>
 #include <cstdint>
+#include <string>
+#include <sstream>
 
 #include "IdObj.h"
 #include "Student.h"

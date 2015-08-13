@@ -10,6 +10,8 @@
 ** -------------------------------------------------------------------------*/
 #include "Course.h"
 
+
+
 vector<Course> Course::getAllCourses()
 {
 	vector<Course> v;
@@ -17,11 +19,39 @@ vector<Course> Course::getAllCourses()
 }
 void Course::save(bool recursive)
 {
+	//create the record
+	string record = string("<idobj>");
+	record += string("<serial=\"" + static_cast<ostringstream*>(&(ostringstream() << serial))->str() + "\">");
+	record += string("<id=\"" + static_cast<ostringstream*>(&(ostringstream() << id))->str() + "\">");
+	record += string("<courseId=\"" + static_cast<ostringstream*>(&(ostringstream() << courseId))->str() + "\">");
+	record += string("<name=\"" + name + "\">");
+	record += string("<description=\"" + description + "\">");
+	record += string("<teachingHours=\"" + teachingHours + "\">");
+	record += string("<maxStudents=\"" + static_cast<ostringstream*>(&(ostringstream() << maxStudents))->str() + "\">");
+	record += string("<prerequisiteCourses>");
+	for each (Course course in prerequisiteCourses)
+	{
+		record += string("<course.id=\"" + static_cast<ostringstream*>(&(ostringstream() << course.id))->str() + "\">");
+	}
+	record += string("<\\prerequisiteCourses>");
+	record += string("<\\idobj>");
+	
+	//TODO: write record to DB
+	cout << record << endl;
+
+	//save prerequisite courses
+	if (recursive) 
+	{
+		for each (Course course in prerequisiteCourses)
+		{
+			course.save(recursive);
+		}
+	}
 
 }
 void Course::deleteMe()
 {
-
+	//TODO: delete from DB by id and serial
 }
 
 bool Course::setPrerequisiteCourse(Course course)
