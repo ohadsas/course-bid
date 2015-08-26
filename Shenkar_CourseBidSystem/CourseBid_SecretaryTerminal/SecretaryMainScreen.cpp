@@ -38,13 +38,13 @@ void SecretaryMainScreen::getAssignitionResultsStudents()
 {
 
 }
-
+/*
 Expression * SecretaryMainScreen::getExpressionScreen()
 {
 
 	return NULL;
 }
-
+*/
 string SecretaryMainScreen::getRegistrationStartDate()
 {
 

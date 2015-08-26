@@ -68,20 +68,20 @@
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CourseBid_Common\IdObj.h" />
     <ClInclude Include="..\CourseBid_Storage\IStorage.h" />
-    <ClInclude Include="At.h" />
-    <ClInclude Include="BinaryDiv.h" />
-    <ClInclude Include="BinaryMinus.h" />
-    <ClInclude Include="BinaryMult.h" />
-    <ClInclude Include="BinaryOperator.h" />
-    <ClInclude Include="BinaryPlus.h" />
-    <ClInclude Include="Expression.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Parser.h" />
-    <ClInclude Include="UnaryMinus.h" />
+    <ClInclude Include="Token.h" />
+    <ClInclude Include="TokenAt.h" />
+    <ClInclude Include="TokenBracket.h" />
+    <ClInclude Include="TokenContainer.h" />
+    <ClInclude Include="TokenNum.h" />
+    <ClInclude Include="TokenOperator.h" />
+    <ClInclude Include="TokenUnrec.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
