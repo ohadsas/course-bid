@@ -171,7 +171,7 @@ void Parser::reduce(vector<Token*>& vec_token, Token* token_reducde, int pos_sta
 	vec_token[pos_start_clear] = token_reducde;
 	vec_token.erase(vec_token.begin() + pos_start_clear + 1, vec_token.begin() + pos_end_clear + 1);
 
-	cout << "reduce";
+	//cout << "reduce";
 }
 
 bool Parser::isError() {
