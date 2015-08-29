@@ -17,27 +17,30 @@
 using namespace std;
 
 #include "IdObj.h"
-#include "Expression.h"
+#include "Lexer.h"
+#include "TokenContainer.h"
 
-class Parser : public IdObj {
+class Parser {
 private:
-	stack<Expression> exprStack;
+	double result;
+	bool error;
+	double _parseTokenResult(Lexer* lexer, const int at_value);
+	int findBracketCloserPosition(const vector<Token*>& vec_token, int bracket_start);
+	int findBracketOpenerPosition(const vector<Token*>& vec_token);
+	string getSubstringInsideBracket(const vector<Token*>& vec_token, int bracket_start);
+	void reduce(vector<Token*>& vec_token, Token* token_reducde, int pos_start_clear, int pos_end_clear);
+	vector<Token*> _parse(vector<Token*> vec_token);
+	void copyVecToken(const vector<Token*>& vec_token_source, vector<Token*>& vec_token_copy_to, int pos_start, int pos_end);
+	int findMultDivOperator(const vector<Token*>& vec_token);
+	int findPlusMinusOperator(const vector<Token*>& vec_token);
+	double stodFixUnary(string num);
+
 public:
-	Parser()
-	{
-		cout << "Parser() called" << endl;
-	}
-
-	void processConst();
-	void processOperator();
-	void processBrackets();
-	void processAt();
-	void getExpr();
-
-	/*Override from parrent*/
-	template <class T> vector<T> getAllObj(int serial);
-	void save(bool recursive);
-	void deleteMe();
+	void parse(const string expr, const int at_value);
+	void parseTokenResult(const string, const int at_value);
+	bool isError();
+	double getResult();
+	~Parser();
 };
 
 #endif PARSER_H

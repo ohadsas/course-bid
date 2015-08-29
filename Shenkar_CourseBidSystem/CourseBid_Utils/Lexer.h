@@ -13,23 +13,29 @@
 
 #include <iostream>
 #include <cstdint>	
+#include <vector>
+#include <sstream>
+#include <utility>
+
 using namespace std;
 
-#include "Parser.h"
+#include "TokenContainer.h"
 
 class Lexer {
 private:
-	Parser * parser;
+	// Parser* parser;
+	vector<Token*> vec_token;
+	void switchPrevAndPrevPrev();
+	void saveAsToken(string expression, int start_index, int end_index, Token::TOKEN_TYPE token_type);
+	void saveAsToken(string s, Token::TOKEN_TYPE token_type);
+	Token* createToken(string token_string, Token::TOKEN_TYPE token_type);
+	//string fixForUnaryOperator(string expr);
 public:
-	Lexer()
-	{
-		cout << "Lexer() called" << endl;
-	}
-
 	Lexer(string expression);
-	void getExpr();
-	void tokenize();
-
+	vector<Token*> getTokenVector();
+	void tokenize(string expression);
+	static void copyVecToken(Lexer* lexer, vector<Token*>& vec_token_copy, int s_pos, int e_pos);
+	static void copyVecToken(const vector<Token*>& vec_token_source, vector<Token*>& vec_token_copy, int s_pos, int e_pos);
 };
 
 #endif LEXER_H

@@ -20,13 +20,23 @@ using namespace std;
 /
 */
 
-//#include "Parser.h"
+#include "Parser.h"
 #include "Lexer.h"
 int main(int argc, char* argv[])
 {
 	cout << "UTILS Lib" << endl;
 
 	//Parser p();
-	Lexer l();
+	//Lexer lexer("123+4*(6/2)");
+	Parser parser;
+	//parser.parseTokenResult("123+@/2", 10);;
+	parser.parse("-(--(-123*(-@))/-2)", 10);
+	//parser.parse("2/-1", 10);
+	if (parser.isError())
+		cout << "Error.." << endl;
+	else
+		cout << "result: " << parser.getResult() << endl;
+	system("pause");
+
 }
 #endif UTILS

@@ -18,7 +18,7 @@ using namespace std;
 #include "UIMainScreen.h"
 #include "Course.h"
 #include "Student.h"
-#include "Expression.h"
+//#include "Expression.h"
 
 class SecretaryMainScreen : public UIMainScreen {
 public:
@@ -27,7 +27,7 @@ public:
 	vector<Student*> getStudentList();
 	void getAssignitionResultsCourses();
 	void getAssignitionResultsStudents();
-	Expression * getExpressionScreen();
+	//Expression * getExpressionScreen();
 	string getRegistrationStartDate();
 	bool releaseTerminalScreen();
 	bool studentUnlockScreen();
