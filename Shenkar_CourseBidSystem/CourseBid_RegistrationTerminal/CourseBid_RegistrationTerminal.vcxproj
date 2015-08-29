@@ -72,9 +72,14 @@
   <ItemGroup>
     <ClCompile Include="..\CourseBid_Common\AssignmentCalculator.cpp" />
     <ClCompile Include="..\CourseBid_Common\Course.cpp" />
+    <ClCompile Include="..\CourseBid_Common\CourseEventLog.cpp" />
     <ClCompile Include="..\CourseBid_Common\Student.cpp" />
+    <ClCompile Include="..\CourseBid_Common\StudentEventLog.cpp" />
     <ClCompile Include="..\CourseBid_Common\Technician.cpp" />
+    <ClCompile Include="..\CourseBid_Common\User.cpp" />
+    <ClCompile Include="..\CourseBid_Storage\DBEventLog.cpp" />
     <ClCompile Include="..\CourseBid_Storage\FileStorage.cpp" />
+    <ClCompile Include="..\CourseBid_Utils\EventLog.cpp" />
     <ClCompile Include="InsertAssignitionFileScreen.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="PointDistributionScreen.cpp" />
@@ -87,10 +92,13 @@
   <ItemGroup>
     <ClInclude Include="..\CourseBid_Common\AssignmentCalculator.h" />
     <ClInclude Include="..\CourseBid_Common\Course.h" />
+    <ClInclude Include="..\CourseBid_Common\CourseEventLog.h" />
     <ClInclude Include="..\CourseBid_Common\IdObj.h" />
     <ClInclude Include="..\CourseBid_Common\Student.h" />
+    <ClInclude Include="..\CourseBid_Common\StudentEventLog.h" />
     <ClInclude Include="..\CourseBid_Common\Technician.h" />
     <ClInclude Include="..\CourseBid_Common\User.h" />
+    <ClInclude Include="..\CourseBid_Storage\DBEventLog.h" />
     <ClInclude Include="..\CourseBid_Storage\FileStorage.h" />
     <ClInclude Include="..\CourseBid_Storage\IStorage.h" />
     <ClInclude Include="..\CourseBid_UI\UIDataScreen.h" />
@@ -100,6 +108,8 @@
     <ClInclude Include="..\CourseBid_UI\UIMainScreen.h" />
     <ClInclude Include="..\CourseBid_UI\UIScreen.h" />
     <ClInclude Include="..\CourseBid_UI\UITerminal.h" />
+    <ClInclude Include="..\CourseBid_Utils\CustomLog.h" />
+    <ClInclude Include="..\CourseBid_Utils\EventLog.h" />
     <ClInclude Include="InsertAssignitionFileScreen.h" />
     <ClInclude Include="PointDistributionScreen.h" />
     <ClInclude Include="RegistrationLockedScreen.h" />

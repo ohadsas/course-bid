@@ -57,6 +57,21 @@
     <ClCompile Include="..\CourseBid_Common\AssignmentCalculator.cpp">
       <Filter>External</Filter>
     </ClCompile>
+    <ClCompile Include="..\CourseBid_Utils\EventLog.cpp">
+      <Filter>External</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CourseBid_Storage\DBEventLog.cpp">
+      <Filter>External</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CourseBid_Common\CourseEventLog.cpp">
+      <Filter>External</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CourseBid_Common\StudentEventLog.cpp">
+      <Filter>External</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CourseBid_Common\User.cpp">
+      <Filter>External</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CourseBid_Common\Course.h">
@@ -126,6 +141,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\CourseBid_Common\AssignmentCalculator.h">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CourseBid_Utils\CustomLog.h">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CourseBid_Utils\EventLog.h">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CourseBid_Storage\DBEventLog.h">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CourseBid_Common\CourseEventLog.h">
+      <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CourseBid_Common\StudentEventLog.h">
       <Filter>External</Filter>
     </ClInclude>
   </ItemGroup>

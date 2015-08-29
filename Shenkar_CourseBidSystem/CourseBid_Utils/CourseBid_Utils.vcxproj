@@ -65,6 +65,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EventLog.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="Parser.cpp" />
@@ -73,6 +74,17 @@
   <ItemGroup>
     <ClInclude Include="..\CourseBid_Common\IdObj.h" />
     <ClInclude Include="..\CourseBid_Storage\IStorage.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="At.h" />
+    <ClInclude Include="BinaryDiv.h" />
+    <ClInclude Include="BinaryMinus.h" />
+    <ClInclude Include="BinaryMult.h" />
+    <ClInclude Include="BinaryOperator.h" />
+    <ClInclude Include="BinaryPlus.h" />
+    <ClInclude Include="EventLog.h" />
+    <ClInclude Include="Expression.h" />
+>>>>>>> master
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Token.h" />

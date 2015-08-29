@@ -4,9 +4,9 @@
 ** Authors: <Ohad Sasson, Moshe Shimon, Yaron Israeli, Maor Toubian, Yossi Gleyzer
 **
 ** Student.h
-** <very brief file description>
+** Student class.
 **
-** Author: <original author>
+** Author: Yossi Gleyzer,
 ** -------------------------------------------------------------------------*/
 #ifndef STUDENT_H
 #define STUDENT_H
@@ -15,28 +15,89 @@
 #include <cstdint>	
 using namespace std;
 #include <vector>
+#include <string>
+#include <sstream>
 
 #include "User.h"
 #include "Course.h"
+#include "StudentEventLog.h"
 
 class Course;
 class Student :public User {
 private:
+	//static serial number for all objects Student
+	static const int SERIAL = 2; 
 	vector<Course*> completedCourses;
 	vector<Course*> assignedCourses;
 	vector<Course*> desiredCourses;
 	vector<int> desiredPoints;
 	int points;
 public:
-	Student(long userId) : User(userId)
-	{
-		cout << "Student() called" << endl;
-	}
-	Student(long userId, string lastName, string firstName)
-		:User(userId, firstName, lastName)
-	{
-		cout << "Student() called" << endl;
-	}
+	/*
+	** Public static storage tags
+	*/
+	static const string TAG_COMPLETEDCOURSES;
+	static const string TAG_ASSIGNEDCOURSES;
+	static const string TAG_DESIREDCOURSES;
+	static const string TAG_DESIREDPOINTS;
+	static const string TAG_POINTS;
+
+	/*
+	** Student constructor.
+	*/
+	Student(long id, IStorage * storage) : User(id, storage) { }
+
+	/*
+	** Constructor. Create Student from given string.
+	** NOTE: In case of circular precourse dependencies this might cause STACK OVERFLOW!!!
+	*/
+	Student(string studentAsString, IStorage * storage);
+	
+	/*
+	** Static Method - Returns a vector of all students.
+	*/
+	static vector<Student> getAllStudents(IStorage * storage);
+	
+	/*
+	** inline get/set methods
+	*/
+	vector<Course*> getDesiredCourses()							{ return desiredCourses;	}
+	vector<Course*> getCompletedCourses()						{ return completedCourses;	}
+	vector<Course*> getAssignedCourse()							{ return assignedCourses;	}
+	void setPoints(int points)									{ this->points = points;	}
+	int getPoints()												{ return points;	}
+
+	/*(Storage override)
+	** Creates record and saves to DB using IStorage from base IdObj. If recursive saves inner objects.
+	*/
+	virtual void save(bool recursive);
+
+	/*(Storage override)
+	** Delete record and save DB using IStorage from base IdObj.
+	*/
+	virtual void deleteMe();
+
+	/* Static Method
+	** This function returns a student by object id.
+	** If not found student with given id - throws an exception.
+	*/
+	static Student getStudentById(IStorage * storage, int id);
+
+	/* Static Method
+	** This function returns a student by student id.
+	** If not found - returns NULL.
+	*/
+	static Student* getStudentByStudentId(IStorage * storage, int userId);
+
+	/*
+	** Converts a Student to String.
+	** Used for Debug purposes only!
+	*/
+	string ToString();
+
+
+
+	//TODO:
 	bool addDesiredCourse(Course* course);
 	bool addDesiredCourse(long courseId);
 	bool addAssignedCourse(Course* course);
@@ -49,21 +110,7 @@ public:
 	bool removeAssignedCourse(long courseId);
 	bool removeCompletedCourse(Course* course);
 	bool removeCompletedCourse(long courseId);
-	Student& getStudentById(int userId);
-	vector<Student*> getAllStudents();
 	vector<Course*> getCourseListForStudentById(long userId);
-
-	//inline methods
-	vector<Course*> getDesiredCourses()							{ return desiredCourses;	}
-	vector<Course*> getCompletedCourses()						{ return completedCourses;	}
-	vector<Course*> getAssignedCourse()							{ return assignedCourses;	}
-	void setPoints(int points)									{ this->points = points;	}
-	int getPoints()												{ return points;	}
-
-	/* NON IMPLEMENTED STORAGE METHODS - NEED OVERRIDE*/
-	template <class T> vector<T> getAllObj(int serial);
-	virtual void save(bool recursive);
-	virtual void deleteMe();
 };
 
 #endif STUDENT_H
