@@ -4,9 +4,9 @@
 ** Authors: <Ohad Sasson, Moshe Shimon, Yaron Israeli, Maor Toubian, Yossi Gleyzer
 **
 ** User.h
-** <very brief file description>
+** Technician class
 **
-** Author: <original author>
+** Author: Yossi Gleyzer
 ** -------------------------------------------------------------------------*/
 #ifndef TECHNICIAN_H
 #define TECHNICIAN_H
@@ -14,25 +14,60 @@
 #include <iostream>
 #include <cstdint>	
 using namespace std;
+#include <vector>
+#include <string>
+#include <sstream>
 
 #include "User.h"
 
 class Technician : public User {
 public:
-	Technician(long userId) :User(userId)
-	{
-		cout << "Technician() called" << endl;
-	}
-	Technician(long userId, string firstName, string lastName) 
-		:User(userId, firstName, lastName)
-	{
-		cout << "Technician() called" << endl;
-	}
+	//static serial number for all objects Technician
+	static const int SERIAL = 3;
 
-	/* NON IMPLEMENTED STORAGE METHODS - NEED OVERRIDE*/
-	template <class T> vector<T> getAllObj(int serial);
+	/*
+	** Constructor.
+	*/
+	Technician(long userId, IStorage * storage) :User(userId, storage) { }
+
+	/*
+	** Constructor.
+	*/
+	Technician(string technicianAsStrign, IStorage * storage);
+
+	/* Static Method
+	** This function returns a technician by object id.
+	** If not found technician with given id - throws an exception.
+	*/
+	static Technician getTechnicianById(IStorage * storage, int id);
+
+	/* Static Method
+	** This function returns a technician by student id.
+	** If not found - returns NULL.
+	*/
+	static Technician* getTechnicianByTechnicianId(IStorage * storage, int userId);
+
+	/*
+	** Static Method - Returns a vector of all technicians.
+	*/
+	static vector<Technician> getAllTechnician(IStorage * storage);
+
+	/*(Storage override)
+	** Creates record and saves to DB using IStorage from base IdObj. 
+	** Recursiveness not works for this class, no matter if true or false - here only for inheritance.
+	*/
 	virtual void save(bool recursive);
+
+	/*(Storage override)
+	Delete record and save DB using IStorage from base IdObj.
+	*/
 	virtual void deleteMe();
+
+	/*
+	** Converts a Technician to String.
+	** Used for Debug purposes only!
+	*/
+	string ToString();
 };
 
 #endif TECHNICIAN_H

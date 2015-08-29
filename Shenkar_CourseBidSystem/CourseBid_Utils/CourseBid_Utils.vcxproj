@@ -65,6 +65,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EventLog.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="Parser.cpp" />
@@ -78,6 +79,7 @@
     <ClInclude Include="BinaryMult.h" />
     <ClInclude Include="BinaryOperator.h" />
     <ClInclude Include="BinaryPlus.h" />
+    <ClInclude Include="EventLog.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Parser.h" />

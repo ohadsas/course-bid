@@ -66,21 +66,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CourseBid_Storage\DBEventLog.cpp" />
+    <ClCompile Include="..\CourseBid_Storage\FileStorage.cpp" />
+    <ClCompile Include="..\CourseBid_Utils\EventLog.cpp" />
     <ClCompile Include="AssignitionResultsCourseScreen.cpp" />
     <ClCompile Include="AssignitionResultScreen.cpp" />
     <ClCompile Include="AssignitionResultsStudentScreen.cpp" />
     <ClCompile Include="Course.cpp" />
     <ClCompile Include="CourseDataScreen.cpp" />
+    <ClCompile Include="CourseEventLog.cpp" />
     <ClCompile Include="CourseListScreen.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="RegistrationStartDate.cpp" />
     <ClCompile Include="AssignmentCalculator.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentDataScreen.cpp" />
+    <ClCompile Include="StudentEventLog.cpp" />
     <ClCompile Include="StudentListScreen.cpp" />
     <ClCompile Include="Technician.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CourseBid_Storage\DBEventLog.h" />
     <ClInclude Include="..\CourseBid_Storage\FileStorage.h" />
     <ClInclude Include="..\CourseBid_Storage\IStorage.h" />
     <ClInclude Include="..\CourseBid_UI\UIDataScreen.h" />
@@ -89,18 +96,21 @@
     <ClInclude Include="..\CourseBid_UI\UIMainScreen.h" />
     <ClInclude Include="..\CourseBid_UI\UIScreen.h" />
     <ClInclude Include="..\CourseBid_UI\UITerminal.h" />
+    <ClInclude Include="..\CourseBid_Utils\EventLog.h" />
     <ClInclude Include="AssignitionResultsCourseScreen.h" />
     <ClInclude Include="AssignitionResultsScreen.h" />
     <ClInclude Include="AssignitionResultsStudentScreen.h" />
     <ClInclude Include="AssignmentCalculator.h" />
     <ClInclude Include="Course.h" />
     <ClInclude Include="CourseDataScreen.h" />
+    <ClInclude Include="CourseEventLog.h" />
     <ClInclude Include="CourseListScreen.h" />
     <ClInclude Include="CoursePair.h" />
     <ClInclude Include="IdObj.h" />
     <ClInclude Include="RegistrationStartDate.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentDataScreen.h" />
+    <ClInclude Include="StudentEventLog.h" />
     <ClInclude Include="StudentListScreen.h" />
     <ClInclude Include="Technician.h" />
     <ClInclude Include="User.h" />

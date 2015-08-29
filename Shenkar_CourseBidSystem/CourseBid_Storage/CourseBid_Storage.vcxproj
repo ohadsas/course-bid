@@ -11,10 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CourseBid_Utils\EventLog.h" />
+    <ClInclude Include="DBEventLog.h" />
     <ClInclude Include="FileStorage.h" />
     <ClInclude Include="IStorage.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DBEventLog.cpp" />
     <ClCompile Include="FileStorage.cpp" />
     <ClCompile Include="maincpp.cpp" />
   </ItemGroup>
@@ -52,6 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\CourseBid_Utils;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
