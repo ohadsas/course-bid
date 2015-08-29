@@ -4,58 +4,208 @@
 ** Authors: <Ohad Sasson, Moshe Shimon, Yaron Israeli, Maor Toubian, Yossi Gleyzer>
 **
 ** Course.cpp
-** <very brief file description>
+** Course Class implementation.
 **
-** Author: <original author>
+** Author: Yossi Gleyzer
 ** -------------------------------------------------------------------------*/
 #include "Course.h"
 
+/*
+** Storage tags consts.
+*/
+const string Course::TAG_COURSE_ID = "courseId";
+const string Course::TAG_NAME = "name";
+const string Course::TAG_DESCRIPTION = "description";
+const string Course::TAG_TEACHING_HOURS = "teachingHours";
+const string Course::TAG_MAX_STUDENTS = "maxStudents";
+const string Course::TAG_PREREQUISITE_COURSES = "prerequisiteCourses";
 
-
-vector<Course> Course::getAllCourses()
+/*
+Constructor. Create Course from given string.
+NOTE: In case of circular precourse dependencies this might cause STACK OVERFLOW!!!
+*/
+Course::Course(string courseAsString, IStorage * storage) : IdObj(0, storage)
 {
-	vector<Course> v;
-	return v;
+	string logCat = "Course";
+	long serialS = storage->getNumberFromStringByTag(courseAsString, storage->TAG_SERIAL);
+	if (serialS != this->SERIAL)
+	{
+		CourseEventLog::error("Wrong serial for course. Received [" + to_string(serialS) + "] while must be [" + to_string(SERIAL) + "].", logCat);
+		throw new exception(); //wrong serial
+	}
+	this->id = storage->getNumberFromStringByTag(courseAsString, storage->TAG_ID);
+	this->courseId = storage->getNumberFromStringByTag(courseAsString, TAG_COURSE_ID);
+	this->name = storage->getStringFromStringByTag(courseAsString, TAG_NAME);
+	this->description = storage->getStringFromStringByTag(courseAsString, TAG_DESCRIPTION);
+	this->teachingHours = storage->getStringFromStringByTag(courseAsString, TAG_TEACHING_HOURS);
+	this->maxStudents = static_cast<int>(storage->getNumberFromStringByTag(courseAsString, TAG_MAX_STUDENTS));
+	CourseEventLog::debug("Initialized course [" + to_string(id) + "] [" + name + "].", logCat);
+	vector<long> preCourseIds = storage->getInnerNumbersByTag(courseAsString, TAG_PREREQUISITE_COURSES);
+	for each (long id in preCourseIds)
+	{
+		CourseEventLog::debug("\tSubcourse [" + to_string(id) + "] initialization:", logCat);
+		prerequisiteCourses.push_back(Course::getCourseById(storage, id));
+	}
 }
+
+/*
+** Static Method - Returns a vector of all courses.
+*/
+vector<Course> Course::getAllCourses(IStorage * storage)
+{
+	string logCat = "getAll";
+	CourseEventLog::debug("Getting list of all courses from DB.", logCat);
+	vector<Course> allCourses;
+	vector<string> coursesAsString = storage->getAll(Course::SERIAL);
+	for each (string courseAsString in coursesAsString)
+	{
+		Course * course = new Course(courseAsString, storage);
+		CourseEventLog::debug("\tReceived course [" + to_string(course->getId()) + "] [" + course->getName() + "] from DB.", logCat);
+		allCourses.push_back(*course);
+	}
+	CourseEventLog::debug("Finished getting list of all courses from DB.", logCat);
+	return allCourses;
+}
+
+/*
+Creates record and saves to DB using IStorage from base IdObj. If recursive saves inner objects.
+*/
 void Course::save(bool recursive)
 {
 	//create the record
-	string record = string("<idobj>");
-	record += string("<serial=\"" + static_cast<ostringstream*>(&(ostringstream() << serial))->str() + "\">");
-	record += string("<id=\"" + static_cast<ostringstream*>(&(ostringstream() << id))->str() + "\">");
-	record += string("<courseId=\"" + static_cast<ostringstream*>(&(ostringstream() << courseId))->str() + "\">");
-	record += string("<name=\"" + name + "\">");
-	record += string("<description=\"" + description + "\">");
-	record += string("<teachingHours=\"" + teachingHours + "\">");
-	record += string("<maxStudents=\"" + static_cast<ostringstream*>(&(ostringstream() << maxStudents))->str() + "\">");
-	record += string("<prerequisiteCourses>");
+	string logCat = "save";
+	CourseEventLog::debug("Creating course record to save in DB for [" + to_string(id) + "] [" + name + "].", logCat);
+	string record = string("<" + storage->TAG_OBJ +">");
+	record += string("<" + storage->TAG_SERIAL + "=\"" + static_cast<ostringstream*>(&(ostringstream() << SERIAL))->str() + "\">");
+	record += string("<" + storage->TAG_ID + "=\"" + static_cast<ostringstream*>(&(ostringstream() << id))->str() + "\">");
+	record += string("<" + TAG_COURSE_ID + "=\"" + static_cast<ostringstream*>(&(ostringstream() << courseId))->str() + "\">");
+	record += string("<" + TAG_NAME + "=\"" + name + "\">");
+	record += string("<" + TAG_DESCRIPTION + "=\"" + description + "\">");
+	record += string("<" + TAG_TEACHING_HOURS + "=\"" + teachingHours + "\">");
+	record += string("<" + TAG_MAX_STUDENTS + "=\"" + static_cast<ostringstream*>(&(ostringstream() << maxStudents))->str() + "\">");
+	record += string("<" + TAG_PREREQUISITE_COURSES + ">");
 	for each (Course course in prerequisiteCourses)
 	{
-		record += string("<course.id=\"" + static_cast<ostringstream*>(&(ostringstream() << course.id))->str() + "\">");
+		record += string("<" + storage->TAG_ID + "=\"" + static_cast<ostringstream*>(&(ostringstream() << id))->str() + "\">");
 	}
-	record += string("<\\prerequisiteCourses>");
-	record += string("<\\idobj>");
-	
-	//TODO: write record to DB
-	cout << record << endl;
+	record += string("<\\" + TAG_PREREQUISITE_COURSES + ">");
+	record += string("<\\" + storage->TAG_OBJ + ">");
+
+	//save record to db
+	CourseEventLog::debug("Saving course record to save in DB for [" + to_string(id) + "] [" + name + "].", logCat);
+	storage->save(record);
 
 	//save prerequisite courses
-	if (recursive) 
+	if (recursive)
 	{
+		CourseEventLog::debug("Saving prerequisite courses - recursive call to [save].", logCat);
 		for each (Course course in prerequisiteCourses)
 		{
 			course.save(recursive);
 		}
 	}
-
+	CourseEventLog::debug("Finished saving courses to DB.", logCat);
 }
+
+/* Override parent
+** Delete this course from DB. NOTE: Object still exists.
+** NOTE: Before using this function you must verify no one is using this course in other prerequisite courses.
+**		Otherwise it will delete a prerequisite course - this will cause an error in next courses.
+*/
 void Course::deleteMe()
 {
-	//TODO: delete from DB by id and serial
+	string logCat = "delete";
+	CourseEventLog::debug("Deleting course from DB by id [" + to_string(id)+ "].", logCat);
+	storage->deleteObj(this->SERIAL, this->id);
+	storage->save();
+	CourseEventLog::debug("Course deleted. Changes saved to DB", logCat);
 }
 
+/* Static Method
+** This function returns a course by object id.
+** If not found course with given id - throws an exception.
+*/
+Course Course::getCourseById(IStorage * storage, long id)
+{
+	string logCat = "getById";
+	CourseEventLog::debug("Trying to get course by id [" + to_string(id) + "].", logCat);
+	vector<Course> allCourses;
+	vector<string> coursesAsString = storage->getAll(SERIAL);
+	for each (string courseAsString in coursesAsString)
+	{
+		if (id == storage->getNumberFromStringByTag(courseAsString, storage->TAG_ID))
+		{
+			Course * c = new Course(courseAsString, storage);
+			CourseEventLog::debug("Course received by id: [" + to_string(id) + "].", logCat);
+			return *c;
+		}
+	}
+	CourseEventLog::error("No course found by id: [" + to_string(id) + "].", logCat);
+	throw new exception(); //no couse found;
+}
+
+/* Static Method
+** This function returns a course by course id.
+** If not found - returns NULL.
+*/
+Course * Course::getCourseByCourseId(IStorage * storage, long courseId)
+{
+	string logCat = "getByCourseId";
+	CourseEventLog::debug("Trying to get course by course id [" + to_string(courseId) + "].", logCat);
+	vector<Course> allCourses;
+	vector<string> coursesAsString = storage->getAll(SERIAL);
+	for each (string courseAsString in coursesAsString)
+	{
+		if (courseId == storage->getNumberFromStringByTag(courseAsString, TAG_COURSE_ID))
+		{
+			Course * c = new Course(courseAsString, storage);
+			CourseEventLog::debug("Course received by course id: [" + to_string(courseId) + "].", logCat);
+			return c;
+		}
+	}
+	CourseEventLog::error("No course found by course id: [" + to_string(courseId) + "].", logCat);
+	return NULL;
+}
+
+/*
+** Converts a Course to String.
+** Used for Debug purposes only!
+*/
+string Course::ToString()
+{
+	string course("Course: [objId:" + to_string(this->id));
+	course += " serial: " + to_string(this->SERIAL);
+	course += " courseId: " + to_string(this->courseId);
+	course += " name: " + this->name;
+	course += " description: " + this->description;
+	course += " teachingHours: " + this->teachingHours;
+	course += " maxStudents: " + to_string(this->maxStudents);
+	course += " pre course ids: <";
+	for each (Course c in prerequisiteCourses)
+	{
+		course += " id: " + to_string(c.getCourseId());
+	}
+	course += ">]";
+	return course;
+}
+
+
+
+
+
+
+//TODO:
+/*
+**
+** Following functions are not inline getters and setters.
+*/
 bool Course::setPrerequisiteCourse(Course course)
 {
+	//check if OK before adding:
+	//1. if prerequisite course exist (?)
+	//2. Circle dependencies
+	//FOR MORE INFO Please look at use case diagramm...
+	prerequisiteCourses.push_back(course);
 	return true;
 }
 
@@ -74,19 +224,6 @@ void Course::removePrerequisiteCourse(long courseId)
 
 }
 
-Course Course::getCourseById()
-{
-	return *this;
-}
-
-Course Course::getCourseById(long CourseId)
-{
-
-
-	return *this;
-}
-
-
 vector<Student*> Course::getStudentListForCourse()
 {
 
@@ -103,7 +240,6 @@ vector<CoursePair*> Course::getCourseDependencies()
 
 bool Course::addCourseDependencies(CoursePair* pair)
 {
-
 
 
 	return true;

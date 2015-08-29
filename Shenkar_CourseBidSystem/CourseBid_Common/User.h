@@ -3,10 +3,10 @@
 ** for course "Tools of Software Engineering".
 ** Authors: <Ohad Sasson, Moshe Shimon, Yaron Israeli, Maor Toubian, Yossi Gleyzer
 **
-** IdObj.h
-** <very brief file description>
+** User.h
+** User abstract class for all kind of users.
 **
-** Author: <original author>
+** Author: Yossi Gleyzer
 ** -------------------------------------------------------------------------*/
 #ifndef USER_H
 #define USER_H
@@ -27,18 +27,29 @@ protected:
 	string password;
 	bool isLocked;
 public:
-	User(long userId) :userId(userId)
-	{
-		cout << "User() called" << endl;
-	}
+	/*
+	** Public static storage tags
+	*/
+	static const string TAG_USERID;
+	static const string TAG_FIRSTNAME;
+	static const string TAG_LASTNAME;
+	static const string TAG_EMAIL;
+	static const string TAG_PASSWORD;
+	static const string TAG_ISLOCKED;
 
-	User(long userId, string firstName, string lastName)
-		:userId(userId), firstName(firstName), lastName(lastName)
-	{
-		cout << "User() called" << endl;
-	}
+	/*
+	** Constructor.
+	*/
+	User(long id, IStorage * storage) : IdObj(id, storage) { }
+
+	/*
+	** Virtual destructor.
+	*/
 	virtual ~User() {};
 
+	/*
+	** Get/Set Methods
+	*/
 	long getId()						{ return userId; }
 	void setFirstName(string firstName)	{ this->firstName = firstName; }
 	string getFirstName()				{ return firstName; }
@@ -51,8 +62,7 @@ public:
 	void setLocked(bool isLocked)		{ this->isLocked = isLocked; }
 	bool getLocked()					{ return isLocked; }
 
-	/* NON IMPLEMENTED STORAGE METHODS - NO! NEED TO OVERRIDE - AS USER IS ABSTRACT CLASS*/
-	template <class T> vector<T> getAllObj(int serial);
+	/* NON IMPLEMENTED STORAGE METHODS - NEED TO OVERRIDE - AS USER IS STILL AN ABSTRACT CLASS*/
 	virtual void save(bool recursive)=0;
 	virtual void deleteMe()=0;
 };

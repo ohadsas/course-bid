@@ -15,7 +15,7 @@
 #include <cstdint>
 using namespace std;
 
-
+#include <string>
 #include "Course.h"
 #include "FileStorage.h"
 
@@ -38,16 +38,72 @@ using namespace std;
 //REGISTRATION TERMINAL
 int main(int argc, char* argv[])
 {
+	
 	cout << "Welcome to course bid - REGISTRATION TERMINAL Shenkar!!" << endl;
+	
+	IStorage * fs = new FileStorage();
+	
+	//Student stud = Student::getStudentById(fs, 12311);
+	Student * stud = Student::getStudentByStudentId(fs, 2);
+	cout << stud->ToString() << endl;
+//	stud->deleteMe();
+	
 
-	Course * c = new Course(123, NULL);
-	c->save(false);
-	Course * c2 = new Course(123, NULL);
-	c2->save(false);
+	/*Course * c = new Course(100, fs);
+	c->setName("English");*/
 
-	FileStorage * fs = new FileStorage();
-	fs->save("<obj><serial=\"1470\">");
+	//vector<Course> courses = Course::getAllCourses(fs);
+	//vector<Student> students = Student::getAllStudents(fs);
+	
 
+	
+	/*
+	vector<Course>vec = c->getAllCourses();
+	for each (Course course in vec)
+	{
+		cout << course.ToString() << endl;
+	}
+	*/
+	
+	/*Student * stu = new Student(12311, fs);
+	
+	stu->setFirstName("John");
+	stu->setLastName("The I");
+	stu->setEmail("john@gmail.com");
+	stu->setPassword("password@1");
+	stu->setPoints(102);
+	stu->setLocked(true);
+	stu->addDesiredCourse(c);
+	
+
+	stu->save(true);
+
+	vector<Student> students = stu->getAllStudents();*/
+
+	
+	
+	/*
+	Course * c1 = new Course(1, fs);
+	c1->setName("Linear Algebra");
+	c1->setDescription("Greate course of mathematics.");
+
+	Course * c2 = new Course(2, fs);
+	c2->setName("Image Processing");
+	c2->setDescription("Fuck me but don't take it!");
+	c2->setPrerequisiteCourse(*c1);
+	c2->save(true);
+
+	
+	for each (string str in fs->getAll(1))
+	{
+		cout << str << endl;
+	}
+	
+
+	fs->deleteObj(1, 1);
+	fs->save();
+	*/
+	//fs->generateId(1);
 	/*
 	//DEMO CALLS TO VERIFY COMPILATION
 	FileStorage * fs = new FileStorage();
