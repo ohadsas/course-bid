@@ -16,20 +16,25 @@
 using namespace std;
 #include "UIMainScreen.h"
 #include "Technician.h"
+#include "Terminal.h"
+#define LOCK true
+#define UNLOCK false
 
-class TechnicianMainScreen :public UIMainScreen {
+class TechnicianMainScreen :public Terminal {
 private:
-	Technician * technician;
+	//Technician * technician;
+	bool Log;
+	void initLoginCounter(int);
 public:
-	TechnicianMainScreen()
-	{
-		cout << "TechnicianMainScreen() called" << endl;
-	}
+	TechnicianMainScreen();
+
 	void logOut();
 	void getAssignitionResultsScreen();
 	void getPointDistributionScreen();
-	void lockTerminal();
+	void lockTerminal(bool);
 	void show();
+	
+	
 };
 
 #endif TECHNICIANMAINSCREEN_H

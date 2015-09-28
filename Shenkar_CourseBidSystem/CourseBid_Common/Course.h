@@ -31,6 +31,7 @@ private:
 	long courseId;
 	string name;
 	vector<Course> prerequisiteCourses;
+	
 	string description;
 	string teachingHours;
 	int maxStudents;

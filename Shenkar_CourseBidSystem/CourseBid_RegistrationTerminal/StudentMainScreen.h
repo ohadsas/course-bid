@@ -16,19 +16,27 @@
 using namespace std;
 #include "UIMainScreen.h"
 #include "Student.h"
+#include "Terminal.h"
 
-class StudentMainScreen:public UIMainScreen {
+class StudentMainScreen: public Terminal {
 private:
 	Student* student;
+	bool Log;
+	void printDependencies();
 public:
 	StudentMainScreen()
 	{
 		cout << "StudentMainScreen() called" << endl;
+		this->Log = true;
+
 	}
+	void printCourseList();
 	void logOut();
 	void getAssignitionResultsScreen();
 	void getPointDistributionScreen();
 	void show();
+
+	
 };
 
 #endif STUDENTMAINSCREEN_H

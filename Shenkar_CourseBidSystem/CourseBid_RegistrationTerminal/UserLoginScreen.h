@@ -14,20 +14,28 @@
 #include <iostream>
 #include <cstdint>	
 using namespace std;
+#define CLEAN cout<<"\nPlease press any key to continue"<<endl;	fflush(stdin);	getchar();	system("cls");
+#define lOGO cout<<"\t\t\t----Course bid - Shenkar----\n"<<endl;
+#define BUFFER_SIZE 20
 
 #include "UIScreen.h"
+#include "Terminal.h"
+#include "LockScreen.h"
+#include "TechnicianMainScreen.h"
 
-class UserLoginScreen: public UIScreen {
+class UserLoginScreen: public Terminal {
 private:
-	long userId;
-	string password;
-public:
-	UserLoginScreen()
-	{
-		cout << "UserLoginScreen() called" << endl;
-	}
+	int loginCounter;
+	string adminPassword = "Admin";
+	int adminId = 123456;
+	void initLoginCounter();
+	void checkLoginCounter();
+	void updateCounter(int);
 
-	void login();
+public:
+	UserLoginScreen();
+	
+
 	void show();
 };
 

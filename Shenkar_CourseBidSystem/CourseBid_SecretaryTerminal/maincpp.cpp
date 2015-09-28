@@ -32,16 +32,23 @@ using namespace std;
 //SECRETARY TERMINAL
 int main(int argc, char* argv[])
 {
-	cout << "Welcome to course bid - SECRETARY TERMINAL Shenkar!!" << endl;
-
-
 
 	//DEMO CALLS TO VERIFY COMPILATION
-	FileStorage * fs = new FileStorage();
-	UIScreen * uis = new UIErrorScreen();
-	UITerminal * uit = new SecretaryTerminal();
-	SecretaryMainScreen * sms = new SecretaryMainScreen();
+//	FileStorage * fs = new FileStorage();
+	
+//	UIScreen * uis = new UIErrorScreen();
+	//UITerminal * uit = new SecretaryTerminal();
+//	SecretaryMainScreen * sms = new SecretaryMainScreen();
 
+	
+	try{
+		SecretaryMainScreen *SecretaryScreen = new SecretaryMainScreen();
+		SecretaryScreen->show();
+	}
+	catch (bad_alloc e)
+	{
+		cerr << e.what() << endl;
+	}
 	system("pause");
 
 }

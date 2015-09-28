@@ -87,6 +87,8 @@ vector<Student> Student::getAllStudents(IStorage * storage)
 	return allStudent;
 }
 
+
+
 /*(Storage override)
 ** Creates record and saves to DB using IStorage from base IdObj. If recursive saves inner objects.
 */

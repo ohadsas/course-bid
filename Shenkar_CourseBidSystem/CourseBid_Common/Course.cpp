@@ -185,7 +185,7 @@ string Course::ToString()
 	{
 		course += " id: " + to_string(c.getCourseId());
 	}
-	course += ">]";
+	course += ">]\n";
 	return course;
 }
 

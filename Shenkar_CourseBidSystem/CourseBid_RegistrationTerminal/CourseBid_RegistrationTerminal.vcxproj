@@ -81,12 +81,14 @@
     <ClCompile Include="..\CourseBid_Storage\FileStorage.cpp" />
     <ClCompile Include="..\CourseBid_Utils\EventLog.cpp" />
     <ClCompile Include="InsertAssignitionFileScreen.cpp" />
+    <ClCompile Include="LockScreen.cpp" />
     <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="PointDistributionScreen.cpp" />
     <ClCompile Include="RegistrationTerminal.cpp" />
     <ClCompile Include="StudentMainScreen.cpp" />
     <ClCompile Include="TechnicianMainScreen.cpp" />
     <ClCompile Include="TechnitianAssignitionResultsScreen.cpp" />
+    <ClCompile Include="Terminal.cpp" />
     <ClCompile Include="UserLoginScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -111,12 +113,14 @@
     <ClInclude Include="..\CourseBid_Utils\CustomLog.h" />
     <ClInclude Include="..\CourseBid_Utils\EventLog.h" />
     <ClInclude Include="InsertAssignitionFileScreen.h" />
+    <ClInclude Include="LockScreen.h" />
     <ClInclude Include="PointDistributionScreen.h" />
     <ClInclude Include="RegistrationLockedScreen.h" />
     <ClInclude Include="RegistrationTerminal.h" />
     <ClInclude Include="StudentMainScreen.h" />
     <ClInclude Include="TechnicianMainScreen.h" />
     <ClInclude Include="TechnitianAssignitionResultsScreen.h" />
+    <ClInclude Include="Terminal.h" />
     <ClInclude Include="UserLoginScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
