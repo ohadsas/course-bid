@@ -14,16 +14,20 @@
 #include <iostream>
 #include <cstdint>	
 #include <vector>
+#include <map>
+#include <lemon/LP.h>
 using namespace std;
 #include "RegistrationStartDate.h"
 #include "Student.h"
-#include "Lexer.h"
+#include "Parser.h"
 
 class AssignmentCalculator {
 private:
 	RegistrationStartDate * registrationStartDate;
-	vector<Student*> Students;
-	Lexer * lexer;
+	vector<Student> students;
+	Parser* parser;
+	int** getCoursesResult(string file_cont);
+	string& getNewLine(string &file_cont, string &tmp);
 public:
 	AssignmentCalculator();
 	void compute();

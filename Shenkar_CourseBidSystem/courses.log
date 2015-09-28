@@ -176,3 +176,29 @@
 16:5:27 DEBUG	[Course]	Initialized course [100] [English].
 16:5:27 DEBUG	[getByCourseId]	Course received by course id: [0].
 16:5:27 DEBUG	[delete]	Student deleted. Changes saved to DB
+14:22:16 DEBUG	[getByCourseId]	Trying to get course by course id [0].
+14:22:16 DEBUG	[Course]	Initialized course [100] [English].
+14:22:16 DEBUG	[getByCourseId]	Course received by course id: [0].
+14:29:24 DEBUG	[getByCourseId]	Trying to get course by course id [0].
+14:29:24 DEBUG	[Course]	Initialized course [100] [English].
+14:29:24 DEBUG	[getByCourseId]	Course received by course id: [0].
+14:29:24 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+14:29:24 DEBUG	[Course]	Initialized course [1] [Algebra].
+14:29:24 DEBUG	[getByCourseId]	Course received by course id: [1].
+14:31:13 DEBUG	[getByCourseId]	Trying to get course by course id [0].
+14:31:13 DEBUG	[Course]	Initialized course [100] [English].
+14:31:13 DEBUG	[getByCourseId]	Course received by course id: [0].
+14:31:13 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+14:31:13 DEBUG	[Course]	Initialized course [1] [Algebra].
+14:31:13 DEBUG	[getByCourseId]	Course received by course id: [1].
+14:31:13 DEBUG	[getById]	Trying to get course by id [1].
+14:31:13 DEBUG	[Course]	Initialized course [1] [Algebra].
+14:31:13 DEBUG	[getById]	Course received by id: [1].
+14:31:13 DEBUG	[save]	Creating course record to save in DB for [1] [Algebra].
+14:31:13 DEBUG	[save]	Saving course record to save in DB for [1] [Algebra].
+14:31:13 DEBUG	[save]	Saving prerequisite courses - recursive call to [save].
+14:31:13 DEBUG	[save]	Finished saving courses to DB.
+14:31:13 DEBUG	[save]	Creating course record to save in DB for [100] [English].
+14:31:13 DEBUG	[save]	Saving course record to save in DB for [100] [English].
+14:31:13 DEBUG	[save]	Saving prerequisite courses - recursive call to [save].
+14:31:13 DEBUG	[save]	Finished saving courses to DB.

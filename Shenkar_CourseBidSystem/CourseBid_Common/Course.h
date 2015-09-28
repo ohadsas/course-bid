@@ -16,14 +16,24 @@
 #include <string>
 #include <sstream>
 
+#include <lemon/list_graph.h>
+#include <lemon/bfs.h>
+#include <lemon/maps.h>
+
 #include "IdObj.h"
 #include "Student.h"
 #include "CoursePair.h"
 #include "FileStorage.h"
 #include "CourseEventLog.h"
 
+using namespace lemon;
+
 class CoursePair;
 class Student;
+/*class Bfs;
+class ListDigraph;
+class CrossRefMap;*/
+
 class Course : public IdObj {
 private:
 	//serial number for all objects Course
@@ -34,6 +44,7 @@ private:
 	string description;
 	string teachingHours;
 	int maxStudents;
+	//vector<Course *> course_dependencies;
 public:
 	/*
 	**STORAGE TAGS
@@ -95,7 +106,7 @@ public:
 	void setTeachingHours(string teachingHours)	{ this->teachingHours = teachingHours; }
 	int getMaxStudents()						{ return maxStudents; }
 	void setMaxStudents(int maxStudents)		{ this->maxStudents = maxStudents; }
-
+	
 	/*
 	** Converts a Course to String.
 	** Used for Debug purposes only!
@@ -109,10 +120,13 @@ public:
 	bool setPrerequisiteCourse(long courseId);
 	void removePrerequisiteCourse(Course course);
 	void removePrerequisiteCourse(long courseId);
+	vector<Course> getPreequisiteCourses();
 	vector<Student*> getStudentListForCourse();
-	vector<CoursePair*> getCourseDependencies();
-	bool addCourseDependencies(CoursePair *pair);
-	CoursePair* removeCourseDependencies(CoursePair *pair);
+	//vector<CoursePair*> getCourseDependencies();
+	//bool addCourseDependencies(CoursePair *pair);
+	//CoursePair* removeCourseDependencies(CoursePair *pair);
+	//bool addCourseDependencies(Course*);
+	//vector<Course *> removeCourseDependencies(Course *);
 };
 
 #endif COURSE_H
