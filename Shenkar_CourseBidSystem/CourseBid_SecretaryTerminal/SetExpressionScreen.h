@@ -15,11 +15,11 @@
 #include <cstdint>	
 using namespace std;
 #include "UIScreen.h"
-#include "Lexer.h"
+#include "Parser.h"
 
 class SetExpressionScreen : public UIScreen {
 private:
-	Lexer * lexer;
+	Parser* parser;
 public:
 	SetExpressionScreen();
 	bool verifyAndSetExpression();
