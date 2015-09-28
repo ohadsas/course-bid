@@ -201,48 +201,108 @@ string Course::ToString()
 */
 bool Course::setPrerequisiteCourse(Course course)
 {
+	// check course is not already in prerequisiteCourse
+	bool flag = false;
+	for (int i = 0; i < prerequisiteCourses.size(); i++)
+		if (prerequisiteCourses[i].courseId == course.courseId)
+			flag = true;
+	
+	if (flag)
+		return false;
+
+
 	//check if OK before adding:
 	//1. if prerequisite course exist (?)
 	//2. Circle dependencies
 	//FOR MORE INFO Please look at use case diagramm...
+
+	// check for circle
+	string n1, n2;
+	ListDigraph g;
+	CrossRefMap<ListDigraph, ListDigraph::Node, string> names(g);
+	Bfs<ListDigraph> bfs(g);
+
+
+
+
 	prerequisiteCourses.push_back(course);
+	save(true);
 	return true;
 }
 
-bool Course::setPrerequisiteCourse(long courseId)
-{
+bool Course::setPrerequisiteCourse(long courseId) {
+	FileStorage storage;// = new FileStorage();
+	Course* course_found = getCourseByCourseId(&storage, courseId);
+
+
+
+	// save
+	// return
 	return true;
 }
 
-void Course::removePrerequisiteCourse(Course course)
-{
-
+void Course::removePrerequisiteCourse(Course course) {
+	removePrerequisiteCourse(course.courseId);
 }
 
-void Course::removePrerequisiteCourse(long courseId)
-{
+void Course::removePrerequisiteCourse(long courseId) {
+	int pos = -1;
+	for (int i = 0; i < prerequisiteCourses.size(); i++)
+		if (prerequisiteCourses[i].courseId == courseId)
+			pos = i;
 
+	if (pos > -1) {
+		prerequisiteCourses.erase(prerequisiteCourses.begin() + pos);
+		save(true);
+	}
 }
 
 vector<Student*> Course::getStudentListForCourse()
 {
+	FileStorage fs;
+	vector<Student> students = Student::getAllStudents(&fs);
+	vector<Student*> students_list_course;
 
+	for (int i = 0; i < students.size(); i++) {
+		vector<Course*> vc = students[i].getCourseListForStudentById(students[i].getId());
+		for (int j = 0; j < vc.size(); i++) {
+			if (vc[j]->getId() == courseId)
+				students_list_course.push_back(&students[i]);
+		}
+	}
 
-	return vector<Student*>();
+	return students_list_course;
 }
 
+vector<Course> Course::getPreequisiteCourses() {
+	return prerequisiteCourses;
+}
+
+/*
 vector<CoursePair*> Course::getCourseDependencies()
 {
-
 
 	return vector<CoursePair*>();
 }
 
-bool Course::addCourseDependencies(CoursePair* pair)
-{
+bool Course::addCourseDependencies(Course* course) {
+	bool flag = false;
+	for (int i = 0; i < course_dependencies.size(); i++)
+		if (course->getId() == course_dependencies[i]->getCourseId())
+			flag = true;
+	if (flag)
+		return false;
 
-
-	return true;
+	try {
+		FileStorage fs;
+		Course::getCourseById(&fs, course->getCourseId());
+		
+		course_dependencies.push_back(course);
+		//save(true);
+	}
+	catch (exception& e) {
+		return false;
+	}
 }
 
 CoursePair* Course::removeCourseDependencies(CoursePair* pair)
@@ -251,3 +311,6 @@ CoursePair* Course::removeCourseDependencies(CoursePair* pair)
 
 	return NULL;
 }
+*/
+
+

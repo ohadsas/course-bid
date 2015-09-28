@@ -34,10 +34,10 @@ private:
 	int findMultDivOperator(const vector<Token*>& vec_token);
 	int findPlusMinusOperator(const vector<Token*>& vec_token);
 	double stodFixUnary(string num);
+	void parseTokenResult(const string, const int at_value);
 
 public:
 	void parse(const string expr, const int at_value);
-	void parseTokenResult(const string, const int at_value);
 	bool isError();
 	double getResult();
 	~Parser();

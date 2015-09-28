@@ -98,8 +98,8 @@ public:
 
 
 	//TODO:
-	bool addDesiredCourse(Course* course);
-	bool addDesiredCourse(long courseId);
+	bool addDesiredCourse(Course* course, int points);
+	bool addDesiredCourse(long courseId, int points);
 	bool addAssignedCourse(Course* course);
 	bool addAssignedCourse(long courseId);
 	bool addCompletedCourse(Course* course);
@@ -110,6 +110,13 @@ public:
 	bool removeAssignedCourse(long courseId);
 	bool removeCompletedCourse(Course* course);
 	bool removeCompletedCourse(long courseId);
+	vector<int> getDesiredPoints();
+	/*int getDesiredPoints(int index);
+	bool addDesiredPoints(int points);
+	bool removeDesiredPoints(int index);
+	bool removeAllDesiredPoints();*/
+	bool removeAllDesiredCourseAndPoints();
+	int getDesiredPointsToCourse(int course_id);
 	vector<Course*> getCourseListForStudentById(long userId);
 };
 

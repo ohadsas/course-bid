@@ -113,7 +113,7 @@ void Student::save(bool recursive)
 		record += string("<" + storage->TAG_ID + "=\"" + static_cast<ostringstream*>(&(ostringstream() << c->getCourseId()))->str() + "\">");
 	}
 	record += string("<\\" + TAG_COMPLETEDCOURSES + ">");
-	record += string("<" + TAG_COMPLETEDCOURSES + ">");
+	record += string("<" + TAG_ASSIGNEDCOURSES + ">");
 	for each (Course * c in assignedCourses)
 	{
 		record += string("<" + storage->TAG_ID + "=\"" + static_cast<ostringstream*>(&(ostringstream() << c->getCourseId()))->str() + "\">");
@@ -263,80 +263,243 @@ string Student::ToString()
 
 
 //TODO:
-bool Student::addDesiredCourse(Course* course)
+bool Student::addDesiredCourse(Course* course, int points)
 {
-	desiredCourses.push_back(course);
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		bool flag = false;
+
+		for (int i = 0; i < desiredCourses.size(); i++)
+			if (desiredCourses[i]->getCourseId() == c.getCourseId())
+				flag = true;
+
+		if (flag)
+			return false;
+
+		desiredCourses.push_back(course);
+		desiredPoints.push_back(points);
+		save(true);
+		return true;
+	} catch(exception& e) {
+		return false;
+	}
+	return false;
 }
 
-bool Student::addDesiredCourse(long courseId)
+bool Student::addDesiredCourse(long courseId, int points)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return addDesiredCourse(Course::getCourseByCourseId(&fs, courseId), points);
 }
 
 bool Student::addAssignedCourse(Course* course)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		bool flag = false;
+
+		for (int i = 0; i < assignedCourses.size(); i++)
+			if (assignedCourses[i]->getCourseId() == c.getCourseId())
+				flag = true;
+
+		if (flag)
+			return false;
+
+		assignedCourses.push_back(course);
+		save(true);
+		return true;
+	}
+	catch (exception& e) {
+		return false;
+	}
+	return false;
 }
 
 bool Student::addAssignedCourse(long courseId)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return addAssignedCourse(Course::getCourseByCourseId(&fs, courseId));
 }
 
 bool Student::addCompletedCourse(Course* course)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		bool flag = false;
+
+		for (int i = 0; i < completedCourses.size(); i++)
+			if (completedCourses[i]->getCourseId() == c.getCourseId())
+				flag = true;
+
+		if (flag)
+			return false;
+
+		completedCourses.push_back(course);
+		save(true);
+		return true;
+	}
+	catch (exception& e) {
+		return false;
+	}
+	return false;
 }
 
 bool Student::addCompletedCourse(long courseId)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return addCompletedCourse(Course::getCourseByCourseId(&fs, courseId));
 }
 
 bool Student::removeDesiredCourse(Course* course)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		int pos = -1;
+
+		for (int i = 0; i < desiredCourses.size(); i++)
+			if (desiredCourses[i]->getCourseId() == c.getCourseId())
+				pos = i;
+
+		if (pos==-1)
+			return false;
+
+		desiredCourses.erase(desiredCourses.begin() + pos);
+		desiredPoints.erase(desiredPoints.begin() + pos);
+		save(true);
+		return true;
+	}
+	catch (exception& e) {
+		return false;
+	}
+	return false;
 }
 
 bool Student::removeDesiredCourse(long courseId)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return removeDesiredCourse(Course::getCourseByCourseId(&fs, courseId));
 }
 
 bool Student::removeAssignedCourse(Course* course)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		int pos = -1;
+
+		for (int i = 0; i < assignedCourses.size(); i++)
+			if (assignedCourses[i]->getCourseId() == c.getCourseId())
+				pos = i;
+
+		if (pos == -1)
+			return false;
+
+		assignedCourses.erase(assignedCourses.begin() + pos);
+		save(true);
+		return true;
+	}
+	catch (exception& e) {
+		return false;
+	}
+	return false;
 }
 
 bool Student::removeAssignedCourse(long courseId)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return removeAssignedCourse(Course::getCourseByCourseId(&fs, courseId));
 }
 
 bool Student::removeCompletedCourse(Course* course)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	// check if courses is on DB
+	try {
+		Course c = Course::getCourseById(&fs, course->getCourseId());
+		int pos = -1;
+
+		for (int i = 0; i < completedCourses.size(); i++)
+			if (completedCourses[i]->getCourseId() == c.getCourseId())
+				pos = i;
+
+		if (pos == -1)
+			return false;
+
+		completedCourses.erase(completedCourses.begin() + pos);
+		save(true);
+		return true;
+	}
+	catch (exception& e) {
+		return false;
+	}
+	return false;
 }
 
 bool Student::removeCompletedCourse(long courseId)
 {
-	//please remove this demo return
-	return true;
+	FileStorage fs;
+	return removeCompletedCourse(Course::getCourseByCourseId(&fs, courseId));
 }
 
 vector<Course*> Student::getCourseListForStudentById(long userId)
 {
-	//please remove this demo return
-	return vector<Course*>();
+	
+	return assignedCourses;
+}
+
+vector<int> Student::getDesiredPoints() {
+	return desiredPoints;
+}
+
+/*int Student::getDesiredPoints(int index) {
+	return desiredPoints[index];
+}
+
+bool Student::addDesiredPoints(int points) {
+	desiredPoints.push_back(points);
+	return true;
+}
+
+bool Student::removeDesiredPoints(int index) {
+	desiredPoints.erase(desiredPoints.begin() + index);
+	return true;
+}
+bool Student::removeAllDesiredPoints() {
+	while (desiredPoints.size()>0)
+		desiredPoints.erase(desiredPoints.begin());
+	return true;
+}*/
+
+int Student::getDesiredPointsToCourse(int course_id) {
+	// search place of this course in desired_courses - it must be in order equivalent 
+	int p = -1;
+	for (int i = 0; i < desiredCourses.size(); i++) {
+		if (desiredCourses[i]->getCourseId() == course_id)
+			p = i;
+	}
+	
+	if (p!=-1)
+		return desiredPoints[p];
+	// course has not been found on desired courses of this student
+	return 0; // 0 points
+}
+
+bool Student::removeAllDesiredCourseAndPoints() {
+	while (desiredCourses.size() != 0)
+		desiredCourses.erase(desiredCourses.begin());
+	while (desiredPoints.size() != 0)
+		desiredPoints.erase(desiredPoints.begin());
+	
+	save(true);
+	return true;
+
 }
