@@ -1,17 +1,1 @@
-# Compiled Object files
 
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-
-# Executables
-*.exe
-*.out
-*.app
-*.log
-*.lastbuildstate
-*.tlog
