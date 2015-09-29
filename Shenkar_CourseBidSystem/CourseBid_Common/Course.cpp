@@ -230,15 +230,97 @@ bool Course::setPrerequisiteCourse(Course course)
 	return true;
 }
 
-bool Course::setPrerequisiteCourse(long courseId) {
+bool Course::setPrerequisiteCourse(long attach_course_id) {
 	FileStorage storage;// = new FileStorage();
-	Course* course_found = getCourseByCourseId(&storage, courseId);
+	Course* course = getCourseByCourseId(&storage, attach_course_id);
 
+	if (course == NULL)
+		return false;
 
+	// check circle dependencies
+	bool result;
+	vector<std::pair<long, long>*> vec_pair;
+	if (!buildCourseGraphForFileFormat(attach_course_id, vec_pair)) // Something went wrong..
+		return false;
+
+	ListDigraph g;
+	CrossRefMap<ListDigraph, ListDigraph::Node, string> names(g);
+	Bfs<ListDigraph> bfs(g);
+	int line_counter;
+	string n1, n2;
+
+	bool flag = false;
+	
+	//while (infile >> n1 >> n2 && i<line_counter) {
+	for (int i=0; i<vec_pair.size(); i++) {
+		n1 = to_string(vec_pair[i]->first);
+		n2 = to_string(vec_pair[i]->second);
+
+		auto u = names(n1);
+		auto v = names(n2);
+
+		// check if this node is exist
+		if (g.id(u) == -1) {
+			u = g.addNode();
+			names.set(u, n1);
+		}
+
+		// check if this node is exist
+		if (g.id(v) == -1) {
+			v = g.addNode();
+			names.set(v, n2);
+		}
+
+		bfs.run(v);
+		for (ListDigraph::Node n = u; n != INVALID; n = bfs.predNode(n)) {
+			if (bfs.reached(n)) {
+				cout << names[n] << ",";
+				flag = true;
+			}
+
+			g.addArc(u, v);
+
+		}
+
+		if (flag == true)
+			cout << endl;
+		flag = false;
+
+	}
 
 	// save
-	// return
+	if (!flag) // or maybe return flag only
+		prerequisiteCourses.push_back(*course);
+
+	return !flag; // or maybe return flag only
+}
+
+bool Course::buildCourseGraphForFileFormat(long attached_course_id, vector<std::pair<long, long>*>& vec_pair) {
+	FileStorage fs;
+	bool result;
+	result = buildCourseGraphForFileFormat(this->courseId, vec_pair, fs);
+	if (result)
+		buildCourseGraphForFileFormat(attached_course_id, vec_pair, fs);
+
+	if (!result) { // if any of builds encountered a problem
+		vec_pair.clear(); // erase all values in vector
+		return false;
+	}
+
+	vec_pair.push_back(new std::pair<long, long>(this->courseId, attached_course_id));
 	return true;
+}
+
+bool Course::buildCourseGraphForFileFormat(long attached_course_id, vector<std::pair<long, long>*>& vec_pair, FileStorage& fs) {
+	Course* course = getCourseByCourseId(&fs, attached_course_id);
+	if (course == NULL) {
+		return false;
+	} else {
+		vector<Course> vec_depen = course->getPreequisiteCourses();
+		for (int i = 0; i < vec_depen.size(); i++)
+			vec_pair.push_back(new std::pair<long, long>(this->courseId, attached_course_id));
+		return true;
+	}
 }
 
 void Course::removePrerequisiteCourse(Course course) {

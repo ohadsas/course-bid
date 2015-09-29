@@ -15,7 +15,7 @@
 #include <cstdint>
 #include <string>
 #include <sstream>
-
+#include <map>
 #include <lemon/list_graph.h>
 #include <lemon/bfs.h>
 #include <lemon/maps.h>
@@ -44,6 +44,9 @@ private:
 	string description;
 	string teachingHours;
 	int maxStudents;
+
+	bool buildCourseGraphForFileFormat(long attached_course_id, vector<std::pair<long,long>*>& vec_pair);
+	bool buildCourseGraphForFileFormat(long attached_course_id, vector<std::pair<long, long>*>& vec_pair, FileStorage& fs);
 	//vector<Course *> course_dependencies;
 public:
 	/*
