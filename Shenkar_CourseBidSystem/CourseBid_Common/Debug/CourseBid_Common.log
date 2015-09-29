@@ -1,0 +1,91 @@
+﻿Build started 29/09/2015 23:40:05.
+     1>Project "C:\GitProjects\course-bid\Shenkar_CourseBidSystem\CourseBid_Common\CourseBid_Common.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\\CourseBid_Storage" /I"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\\CourseBid_UI" /I"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\\CourseBid_SecretaryTerminal" /I"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\\CourseBid_Utils" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\CourseBid_Storage\DBEventLog.cpp ..\CourseBid_Storage\FileStorage.cpp ..\CourseBid_Utils\EventLog.cpp AssignitionResultsCourseScreen.cpp AssignitionResultScreen.cpp AssignitionResultsStudentScreen.cpp Course.cpp CourseDataScreen.cpp CourseEventLog.cpp CourseListScreen.cpp maincpp.cpp RegistrationStartDate.cpp AssignmentCalculator.cpp Student.cpp StudentDataScreen.cpp StudentEventLog.cpp StudentListScreen.cpp Technician.cpp User.cpp
+         User.cpp
+         Technician.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\technician.cpp(29): warning C4800: 'long' : forcing value to bool 'true' or 'false' (performance warning)
+         StudentListScreen.cpp
+         StudentEventLog.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\studenteventlog.cpp(11): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         StudentDataScreen.cpp
+         Student.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(272): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(283): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(303): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(314): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(334): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(345): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(365): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(377): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(397): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(408): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(428): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(439): warning C4101: 'e' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\student.cpp(483): warning C4018: '<' : signed/unsigned mismatch
+         AssignmentCalculator.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(28): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(36): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(37): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(54): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(55): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(62): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(100): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\assignmentcalculator.cpp(210): warning C4244: '=' : conversion from 'lemon::LpBase::Value' to 'int', possible loss of data
+         RegistrationStartDate.cpp
+         maincpp.cpp
+         CourseListScreen.cpp
+         CourseEventLog.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\courseeventlog.cpp(11): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         CourseDataScreen.cpp
+         Course.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(206): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(255): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(249): warning C4101: 'line_counter' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(241): warning C4101: 'result' : unreferenced local variable
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(320): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(332): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(348): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_common\course.cpp(350): warning C4018: '<' : signed/unsigned mismatch
+         AssignitionResultsStudentScreen.cpp
+         AssignitionResultScreen.cpp
+         AssignitionResultsCourseScreen.cpp
+         EventLog.cpp
+         FileStorage.cpp
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_storage\filestorage.cpp(100): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\gitprojects\course-bid\shenkar_coursebidsystem\coursebid_storage\filestorage.cpp(151): warning C4018: '<' : signed/unsigned mismatch
+         DBEventLog.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\CourseBid_Common.exe" /INCREMENTAL /NOLOGO glpk.lib lemon.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\CourseBid_Common.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\CourseBid_Common.lib" /MACHINE:X86 Debug\DBEventLog.obj
+         Debug\FileStorage.obj
+         Debug\EventLog.obj
+         Debug\AssignitionResultsCourseScreen.obj
+         Debug\AssignitionResultScreen.obj
+         Debug\AssignitionResultsStudentScreen.obj
+         Debug\Course.obj
+         Debug\CourseDataScreen.obj
+         Debug\CourseEventLog.obj
+         Debug\CourseListScreen.obj
+         Debug\maincpp.obj
+         Debug\RegistrationStartDate.obj
+         Debug\AssignmentCalculator.obj
+         Debug\Student.obj
+         Debug\StudentDataScreen.obj
+         Debug\StudentEventLog.obj
+         Debug\StudentListScreen.obj
+         Debug\Technician.obj
+         Debug\User.obj
+     1>lemon.lib(base.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'lemon.lib(base.obj)' or at 'C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\vc120.pdb'; linking object as if no debug info
+     1>lemon.lib(lp_base.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'lemon.lib(lp_base.obj)' or at 'C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\vc120.pdb'; linking object as if no debug info
+     1>lemon.lib(windows.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'lemon.lib(windows.obj)' or at 'C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\vc120.pdb'; linking object as if no debug info
+     1>lemon.lib(glpk.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'lemon.lib(glpk.obj)' or at 'C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\vc120.pdb'; linking object as if no debug info
+         CourseBid_Common.vcxproj -> C:\GitProjects\course-bid\Shenkar_CourseBidSystem\Debug\CourseBid_Common.exe
+     1>Done Building Project "C:\GitProjects\course-bid\Shenkar_CourseBidSystem\CourseBid_Common\CourseBid_Common.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:45.40

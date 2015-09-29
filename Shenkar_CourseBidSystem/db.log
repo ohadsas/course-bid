@@ -1,0 +1,134 @@
+13:40:32 DEBUG	[FileStorage]	Storage exists. Loading from file...
+13:40:32 DEBUG	[FileStorage]	Storage loaded to memory.
+13:41:14 DEBUG	[FileStorage]	Storage exists. Loading from file...
+13:41:14 DEBUG	[FileStorage]	Storage loaded to memory.
+13:42:21 DEBUG	[FileStorage]	Storage exists. Loading from file...
+13:42:21 DEBUG	[FileStorage]	Storage loaded to memory.
+13:43:9 DEBUG	[FileStorage]	Storage exists. Loading from file...
+13:43:9 DEBUG	[FileStorage]	Storage loaded to memory.
+13:58:24 DEBUG	[FileStorage]	Storage exists. Loading from file...
+13:58:24 DEBUG	[FileStorage]	Storage loaded to memory.
+14:22:4 DEBUG	[FileStorage]	Storage exists. Loading from file...
+14:22:4 DEBUG	[FileStorage]	Storage loaded to memory.
+14:22:4 DEBUG	[getAll]	Getting all objects by serial [2].
+14:22:4 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+14:22:16 DEBUG	[getAll]	Getting all objects by serial [1].
+14:22:16 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:29:24 DEBUG	[FileStorage]	Storage exists. Loading from file...
+14:29:24 DEBUG	[FileStorage]	Storage loaded to memory.
+14:29:24 DEBUG	[getAll]	Getting all objects by serial [2].
+14:29:24 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+14:29:24 DEBUG	[getAll]	Getting all objects by serial [1].
+14:29:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:29:24 DEBUG	[getAll]	Getting all objects by serial [1].
+14:29:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:31:13 DEBUG	[FileStorage]	Storage exists. Loading from file...
+14:31:13 DEBUG	[FileStorage]	Storage loaded to memory.
+14:31:13 DEBUG	[getAll]	Getting all objects by serial [2].
+14:31:13 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+14:31:13 DEBUG	[getAll]	Getting all objects by serial [1].
+14:31:13 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:31:13 DEBUG	[getAll]	Getting all objects by serial [1].
+14:31:13 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:31:13 DEBUG	[FileStorage]	Storage exists. Loading from file...
+14:31:13 DEBUG	[FileStorage]	Storage loaded to memory.
+14:31:13 DEBUG	[getAll]	Getting all objects by serial [1].
+14:31:13 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+14:31:13 DEBUG	[save]	Saving DB!
+14:31:13 DEBUG	[save]	Saving record: [<idobj><serial="2"><id="12311"><userId="2"><firstName="John"><lastName="The I"><email="john@gmail.com"><password="password@1"><isLocked="1"><completedCourses><\completedCourses><assignedCourses><id="1"><\completedCourses><desiredCourses><id="0"><\desiredCourses><desiredPoints><id="20"><\desiredPoints><points="102"><\idobj>]
+14:31:13 DEBUG	[save]	New record id [12311] and serial [2]
+14:31:13 DEBUG	[save]	Record already exists [<idobj><serial="2"><id="12311"><userId="2"><firstName="John"><lastName="The I"><email="john@gmail.com"><password="password@1"><isLocked="1"><completedCourses><\completedCourses><completedCourses><\completedCourses><desiredCourses><id="0"><\desiredCourses><desiredPoints><id="20"><\desiredPoints><points="102"><\idobj>]
+14:31:13 DEBUG	[save]	Old record removed.
+14:31:13 DEBUG	[save]	New record added.
+14:31:13 DEBUG	[save]	Saving memory to file [..\db.xml]...
+14:31:13 DEBUG	[save]	Memory saved to file [..\db.xml].
+14:31:13 DEBUG	[save]	Saving DB!
+14:31:13 DEBUG	[save]	Saving record: [<idobj><serial="1"><id="1"><courseId="1"><name="Algebra"><description="Course of Algebra!"><teachingHours=""><maxStudents="30"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+14:31:13 DEBUG	[save]	New record id [1] and serial [1]
+14:31:13 DEBUG	[save]	Record already exists [<idobj><serial="1"><id="1"><courseId="1"><name="Algebra"><description="Course of Algebra!"><teachingHours=""><maxStudents="30"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+14:31:13 DEBUG	[save]	Old record removed.
+14:31:13 DEBUG	[save]	New record added.
+14:31:13 DEBUG	[save]	Saving memory to file [..\db.xml]...
+14:31:13 DEBUG	[save]	Memory saved to file [..\db.xml].
+14:31:13 DEBUG	[save]	Saving DB!
+14:31:13 DEBUG	[save]	Saving record: [<idobj><serial="1"><id="100"><courseId="0"><name="English"><description=""><teachingHours=""><maxStudents="0"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+14:31:13 DEBUG	[save]	New record id [100] and serial [1]
+14:31:13 DEBUG	[save]	Record already exists [<idobj><serial="1"><id="100"><courseId="0"><name="English"><description=""><teachingHours=""><maxStudents="0"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+14:31:13 DEBUG	[save]	Old record removed.
+14:31:13 DEBUG	[save]	New record added.
+14:31:13 DEBUG	[save]	Saving memory to file [..\db.xml]...
+14:31:13 DEBUG	[save]	Memory saved to file [..\db.xml].
+23:30:40 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:30:40 DEBUG	[FileStorage]	Storage loaded to memory.
+23:30:40 DEBUG	[getAll]	Getting all objects by serial [2].
+23:30:40 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+23:30:40 DEBUG	[getAll]	Getting all objects by serial [1].
+23:30:40 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:39:45 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:39:45 DEBUG	[FileStorage]	Storage loaded to memory.
+23:39:45 DEBUG	[getAll]	Getting all objects by serial [2].
+23:39:45 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+23:39:45 DEBUG	[getAll]	Getting all objects by serial [1].
+23:39:45 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:40:55 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:40:55 DEBUG	[FileStorage]	Storage loaded to memory.
+23:40:56 DEBUG	[getAll]	Getting all objects by serial [2].
+23:40:56 DEBUG	[getAll]	Number of objects by serial [2] is [1]
+23:40:56 DEBUG	[getAll]	Getting all objects by serial [1].
+23:40:56 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:44:55 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:44:55 DEBUG	[FileStorage]	Storage loaded to memory.
+23:57:25 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:57:25 DEBUG	[FileStorage]	Storage loaded to memory.
+23:57:25 DEBUG	[getAll]	Getting all objects by serial [1].
+23:57:25 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:57:25 DEBUG	[getAll]	Getting all objects by serial [1].
+23:57:25 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:59:24 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:59:24 DEBUG	[FileStorage]	Storage loaded to memory.
+23:59:24 DEBUG	[getAll]	Getting all objects by serial [1].
+23:59:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:59:24 DEBUG	[getAll]	Getting all objects by serial [1].
+23:59:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:59:24 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:59:24 DEBUG	[FileStorage]	Storage loaded to memory.
+23:59:24 DEBUG	[getAll]	Getting all objects by serial [1].
+23:59:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:59:24 DEBUG	[FileStorage]	Storage exists. Loading from file...
+23:59:24 DEBUG	[FileStorage]	Storage loaded to memory.
+23:59:24 DEBUG	[getAll]	Getting all objects by serial [1].
+23:59:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+23:59:24 DEBUG	[getAll]	Getting all objects by serial [1].
+23:59:24 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:22 DEBUG	[FileStorage]	Storage exists. Loading from file...
+0:0:22 DEBUG	[FileStorage]	Storage loaded to memory.
+0:0:22 DEBUG	[getAll]	Getting all objects by serial [1].
+0:0:22 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:23 DEBUG	[getAll]	Getting all objects by serial [1].
+0:0:23 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:23 DEBUG	[FileStorage]	Storage exists. Loading from file...
+0:0:23 DEBUG	[FileStorage]	Storage loaded to memory.
+0:0:23 DEBUG	[getAll]	Getting all objects by serial [1].
+0:0:23 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:23 DEBUG	[FileStorage]	Storage exists. Loading from file...
+0:0:23 DEBUG	[FileStorage]	Storage loaded to memory.
+0:0:23 DEBUG	[getAll]	Getting all objects by serial [1].
+0:0:23 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:23 DEBUG	[getAll]	Getting all objects by serial [1].
+0:0:23 DEBUG	[getAll]	Number of objects by serial [1] is [4]
+0:0:23 DEBUG	[save]	Saving DB!
+0:0:23 DEBUG	[save]	Saving record: [<idobj><serial="1"><id="3"><courseId="3"><name="Hedva2"><description="Course of H2!"><teachingHours=""><maxStudents="50"><prerequisiteCourses><id="3"><\prerequisiteCourses><\idobj>]
+0:0:23 DEBUG	[save]	New record id [3] and serial [1]
+0:0:23 DEBUG	[save]	Record already exists [<idobj><serial="1"><id="3"><courseId="3"><name="Hedva2"><description="Course of H2!"><teachingHours=""><maxStudents="50"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+0:0:23 DEBUG	[save]	Old record removed.
+0:0:23 DEBUG	[save]	New record added.
+0:0:23 DEBUG	[save]	Saving memory to file [..\db.xml]...
+0:0:23 DEBUG	[save]	Memory saved to file [..\db.xml].
+0:0:23 DEBUG	[save]	Saving DB!
+0:0:23 DEBUG	[save]	Saving record: [<idobj><serial="1"><id="1"><courseId="1"><name="Algebra"><description="Course of Algebra!"><teachingHours=""><maxStudents="30"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+0:0:23 DEBUG	[save]	New record id [1] and serial [1]
+0:0:23 DEBUG	[save]	Record already exists [<idobj><serial="1"><id="1"><courseId="1"><name="Algebra"><description="Course of Algebra!"><teachingHours=""><maxStudents="30"><prerequisiteCourses><\prerequisiteCourses><\idobj>]
+0:0:23 DEBUG	[save]	Old record removed.
+0:0:23 DEBUG	[save]	New record added.
+0:0:23 DEBUG	[save]	Saving memory to file [..\db.xml]...
+0:0:23 DEBUG	[save]	Memory saved to file [..\db.xml].

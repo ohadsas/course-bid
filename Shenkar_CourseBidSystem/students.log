@@ -1,0 +1,18 @@
+14:22:4 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+14:22:16 DEBUG	[getByStudentId]	Student received by student id: [2].
+14:29:24 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+14:29:24 DEBUG	[getByStudentId]	Student received by student id: [2].
+14:31:13 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+14:31:13 DEBUG	[getByStudentId]	Student received by student id: [2].
+14:31:13 DEBUG	[save]	Creating student record to save in DB for [12311] [John The I].
+14:31:13 DEBUG	[save]	Saving student record to save in DB for [12311] [John The I].
+14:31:13 DEBUG	[save]	Saving completed courses - recursive call to [save].
+14:31:13 DEBUG	[save]	Saving assigned courses - recursive call to [save].
+14:31:13 DEBUG	[save]	Saving desired courses - recursive call to [save].
+14:31:13 DEBUG	[save]	Finished saving student record to DB.
+23:30:40 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+23:30:40 DEBUG	[getByStudentId]	Student received by student id: [2].
+23:39:45 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+23:39:45 DEBUG	[getByStudentId]	Student received by student id: [2].
+23:40:56 DEBUG	[getByStudentId]	Trying to get student by student id [2].
+23:40:56 DEBUG	[getByStudentId]	Student received by student id: [2].
