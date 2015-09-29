@@ -205,3 +205,77 @@
 23:30:40 DEBUG	[getByCourseId]	Trying to get course by course id [0].
 23:30:40 DEBUG	[Course]	Initialized course [100] [English].
 23:30:40 DEBUG	[getByCourseId]	Course received by course id: [0].
+23:39:45 DEBUG	[getByCourseId]	Trying to get course by course id [0].
+23:39:45 DEBUG	[Course]	Initialized course [100] [English].
+23:39:45 DEBUG	[getByCourseId]	Course received by course id: [0].
+23:40:56 DEBUG	[getByCourseId]	Trying to get course by course id [0].
+23:40:56 DEBUG	[Course]	Initialized course [100] [English].
+23:40:56 DEBUG	[getByCourseId]	Course received by course id: [0].
+23:57:25 DEBUG	[getAll]	Getting list of all courses from DB.
+23:57:25 DEBUG	[Course]	Initialized course [3] [Hedva2].
+23:57:25 DEBUG	[getAll]		Received course [3] [Hedva2] from DB.
+23:57:25 DEBUG	[Course]	Initialized course [2] [Hedva22].
+23:57:25 DEBUG	[Course]		Subcourse [1] initialization:
+23:57:25 DEBUG	[getById]	Trying to get course by id [1].
+23:57:25 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:57:25 DEBUG	[getById]	Course received by id: [1].
+23:57:25 DEBUG	[getAll]		Received course [2] [Hedva22] from DB.
+23:57:25 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:57:25 DEBUG	[getAll]		Received course [1] [Algebra] from DB.
+23:57:25 DEBUG	[Course]	Initialized course [100] [English].
+23:57:25 DEBUG	[getAll]		Received course [100] [English] from DB.
+23:57:25 DEBUG	[getAll]	Finished getting list of all courses from DB.
+23:59:24 DEBUG	[getAll]	Getting list of all courses from DB.
+23:59:24 DEBUG	[Course]	Initialized course [3] [Hedva2].
+23:59:24 DEBUG	[getAll]		Received course [3] [Hedva2] from DB.
+23:59:24 DEBUG	[Course]	Initialized course [2] [Hedva22].
+23:59:24 DEBUG	[Course]		Subcourse [1] initialization:
+23:59:24 DEBUG	[getById]	Trying to get course by id [1].
+23:59:24 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:59:24 DEBUG	[getById]	Course received by id: [1].
+23:59:24 DEBUG	[getAll]		Received course [2] [Hedva22] from DB.
+23:59:24 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:59:24 DEBUG	[getAll]		Received course [1] [Algebra] from DB.
+23:59:24 DEBUG	[Course]	Initialized course [100] [English].
+23:59:24 DEBUG	[getAll]		Received course [100] [English] from DB.
+23:59:24 DEBUG	[getAll]	Finished getting list of all courses from DB.
+23:59:24 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+23:59:24 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:59:24 DEBUG	[getByCourseId]	Course received by course id: [1].
+23:59:24 DEBUG	[getByCourseId]	Trying to get course by course id [3].
+23:59:24 DEBUG	[Course]	Initialized course [3] [Hedva2].
+23:59:24 DEBUG	[getByCourseId]	Course received by course id: [3].
+23:59:24 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+23:59:24 DEBUG	[Course]	Initialized course [1] [Algebra].
+23:59:24 DEBUG	[getByCourseId]	Course received by course id: [1].
+0:0:22 DEBUG	[getAll]	Getting list of all courses from DB.
+0:0:22 DEBUG	[Course]	Initialized course [3] [Hedva2].
+0:0:23 DEBUG	[getAll]		Received course [3] [Hedva2] from DB.
+0:0:23 DEBUG	[Course]	Initialized course [2] [Hedva22].
+0:0:23 DEBUG	[Course]		Subcourse [1] initialization:
+0:0:23 DEBUG	[getById]	Trying to get course by id [1].
+0:0:23 DEBUG	[Course]	Initialized course [1] [Algebra].
+0:0:23 DEBUG	[getById]	Course received by id: [1].
+0:0:23 DEBUG	[getAll]		Received course [2] [Hedva22] from DB.
+0:0:23 DEBUG	[Course]	Initialized course [1] [Algebra].
+0:0:23 DEBUG	[getAll]		Received course [1] [Algebra] from DB.
+0:0:23 DEBUG	[Course]	Initialized course [100] [English].
+0:0:23 DEBUG	[getAll]		Received course [100] [English] from DB.
+0:0:23 DEBUG	[getAll]	Finished getting list of all courses from DB.
+0:0:23 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+0:0:23 DEBUG	[Course]	Initialized course [1] [Algebra].
+0:0:23 DEBUG	[getByCourseId]	Course received by course id: [1].
+0:0:23 DEBUG	[getByCourseId]	Trying to get course by course id [3].
+0:0:23 DEBUG	[Course]	Initialized course [3] [Hedva2].
+0:0:23 DEBUG	[getByCourseId]	Course received by course id: [3].
+0:0:23 DEBUG	[getByCourseId]	Trying to get course by course id [1].
+0:0:23 DEBUG	[Course]	Initialized course [1] [Algebra].
+0:0:23 DEBUG	[getByCourseId]	Course received by course id: [1].
+0:0:23 DEBUG	[save]	Creating course record to save in DB for [3] [Hedva2].
+0:0:23 DEBUG	[save]	Saving course record to save in DB for [3] [Hedva2].
+0:0:23 DEBUG	[save]	Saving prerequisite courses - recursive call to [save].
+0:0:23 DEBUG	[save]	Creating course record to save in DB for [1] [Algebra].
+0:0:23 DEBUG	[save]	Saving course record to save in DB for [1] [Algebra].
+0:0:23 DEBUG	[save]	Saving prerequisite courses - recursive call to [save].
+0:0:23 DEBUG	[save]	Finished saving courses to DB.
+0:0:23 DEBUG	[save]	Finished saving courses to DB.

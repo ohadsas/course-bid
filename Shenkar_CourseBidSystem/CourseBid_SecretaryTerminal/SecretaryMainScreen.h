@@ -18,9 +18,17 @@ using namespace std;
 #include "UIMainScreen.h"
 #include "Course.h"
 #include "Student.h"
+#include "SetExpressionScreen.h"
+#include "LockRegistrationScreen.h"
+#include <thread>
 //#include "Expression.h"
+#define CLEAN cout<<"\nPlease press any key to continue"<<endl;	fflush(stdin);	getchar();	system("cls");
+#define lOGO cout<<"\t\t\t----Course bid - Shenkar----\n"<<endl;
 
 class SecretaryMainScreen : public UIMainScreen {
+private:
+	char changeScreen;
+	void changeSrceenByTime();
 public:
 	SecretaryMainScreen();
 	vector<Course*> getCourseList();
@@ -33,6 +41,10 @@ public:
 	bool studentUnlockScreen();
 	bool studentResetPassScreen();
 	void show();
+
 };
+
+
+
 
 #endif SECRETARYMAINSCREEN_H

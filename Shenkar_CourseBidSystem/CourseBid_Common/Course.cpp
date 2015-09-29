@@ -289,8 +289,10 @@ bool Course::setPrerequisiteCourse(long attach_course_id) {
 	}
 
 	// save
-	if (!flag) // or maybe return flag only
+	if (!flag) { // or maybe return flag only
 		prerequisiteCourses.push_back(*course);
+		save(true);
+	}
 
 	return !flag; // or maybe return flag only
 }
