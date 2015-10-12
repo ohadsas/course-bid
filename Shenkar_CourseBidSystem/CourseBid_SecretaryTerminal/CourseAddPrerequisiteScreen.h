@@ -16,7 +16,6 @@
 using namespace std;
 #include "UIScreen.h"
 #include "Course.h"
-#include "CircleDetection.h"
 
 class CourseAddPrerequisiteScreen : public UIScreen {
 private:
@@ -24,7 +23,6 @@ private:
 	long leafCourseId;
 	Course * rootCourse;
 	Course * leafCourse;
-	CircleDetection * circleDetection;
 public:
 	CourseAddPrerequisiteScreen(long rootCourseId);
 	bool addPrerequisiteScreen();

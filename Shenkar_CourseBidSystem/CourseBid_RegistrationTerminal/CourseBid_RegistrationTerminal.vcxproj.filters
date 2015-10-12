@@ -72,12 +72,6 @@
     <ClCompile Include="..\CourseBid_Common\User.cpp">
       <Filter>External</Filter>
     </ClCompile>
-    <ClCompile Include="Terminal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LockScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CourseBid_Common\Course.h">
@@ -163,12 +157,6 @@
     </ClInclude>
     <ClInclude Include="..\CourseBid_Common\StudentEventLog.h">
       <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="Terminal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LockScreen.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -24,7 +24,7 @@ public:
 	{
 		cout << "VerifyDependencies() called" << endl;
 	}
-	bool verify(Course* courseToDelete);
+	static bool verify(Course* courseToDelete);
 };
 
 #endif VERIFYDEPENDENCIES_H

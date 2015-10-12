@@ -16,13 +16,17 @@
 using namespace std;
 #include "UIScreen.h"
 #include "Parser.h"
+#include "Student.h"
+
 
 class SetExpressionScreen : public UIScreen {
-private:
-	Parser* parser;
+	string expression;
+	Parser *parser;
 public:
 	SetExpressionScreen();
-	bool verifyAndSetExpression();
+	~SetExpressionScreen();
+	void SetExpression(string&);
+	bool verifyAndSetExpression(string, Student *);
 	void show();
 };
 

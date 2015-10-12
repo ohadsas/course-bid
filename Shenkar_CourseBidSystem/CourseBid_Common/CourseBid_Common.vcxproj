@@ -81,6 +81,7 @@
     <ClCompile Include="AssignitionResultsCourseScreen.cpp" />
     <ClCompile Include="AssignitionResultScreen.cpp" />
     <ClCompile Include="AssignitionResultsStudentScreen.cpp" />
+    <ClCompile Include="CircleDetection.cpp" />
     <ClCompile Include="Course.cpp" />
     <ClCompile Include="CourseDataScreen.cpp" />
     <ClCompile Include="CourseEventLog.cpp" />
@@ -110,6 +111,7 @@
     <ClInclude Include="AssignitionResultsScreen.h" />
     <ClInclude Include="AssignitionResultsStudentScreen.h" />
     <ClInclude Include="AssignmentCalculator.h" />
+    <ClInclude Include="CircleDetection.h" />
     <ClInclude Include="Course.h" />
     <ClInclude Include="CourseDataScreen.h" />
     <ClInclude Include="CourseEventLog.h" />

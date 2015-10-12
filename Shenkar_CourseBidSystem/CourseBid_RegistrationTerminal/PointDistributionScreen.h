@@ -29,8 +29,6 @@ public:
 	void setDesiredCoursePoints();
 	void saveDesiredCourses();
 	void show();
-	void setStudent(Student*);
-	void setCourses(vector<Course>);
 };
 
 #endif POINTDISTRIBUTIONSCREEN_H

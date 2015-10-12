@@ -16,14 +16,12 @@
 using namespace std;
 #include "UIEditScreen.h"
 #include "Course.h"
-#include "CircleDetection.h"
 #include "VerifyDependencies.h"
 
 class CourseEditScreen : public UIEditScreen {
 private:
 	long courseId;
 	Course * course;
-	CircleDetection* circleDetection;
 	VerifyDependencies* verifyDependencies;
 public:
 	CourseEditScreen();

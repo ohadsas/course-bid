@@ -46,7 +46,7 @@ public:
 	** Student constructor.
 	*/
 	Student(long id, IStorage * storage) : User(id, storage) { }
-	
+
 	/*
 	** Constructor. Create Student from given string.
 	** NOTE: In case of circular precourse dependencies this might cause STACK OVERFLOW!!!

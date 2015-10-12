@@ -15,7 +15,7 @@
 #include <cstdint>
 #include <string>
 #include <sstream>
-
+#include <map>
 #include <lemon/list_graph.h>
 #include <lemon/bfs.h>
 #include <lemon/maps.h>
@@ -41,11 +41,10 @@ private:
 	long courseId;
 	string name;
 	vector<Course> prerequisiteCourses;
-	
 	string description;
 	string teachingHours;
 	int maxStudents;
-	//vector<Course *> course_dependencies;
+
 public:
 	/*
 	**STORAGE TAGS

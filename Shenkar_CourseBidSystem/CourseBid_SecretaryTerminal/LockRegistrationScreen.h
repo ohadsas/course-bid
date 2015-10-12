@@ -20,6 +20,5 @@ public:
 	LockRegistrationScreen();
 	void lockTerminal(bool);
 	void show();
-	
-};
 
+};

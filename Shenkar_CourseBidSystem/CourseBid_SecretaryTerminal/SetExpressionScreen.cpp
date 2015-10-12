@@ -12,12 +12,42 @@
 
 SetExpressionScreen::SetExpressionScreen()
 {
-	cout << "SetExpressionScreen() called" << endl;
+	try{
+		this->parser = new Parser();
+	}
+	catch (bad_alloc e){
+		cerr << e.what();
+	}
+
 }
 
-bool SetExpressionScreen::verifyAndSetExpression()
+
+SetExpressionScreen::~SetExpressionScreen(){
+	delete parser;
+}
+
+void SetExpressionScreen::SetExpression(string &exp)
 {
 
+}
+
+bool SetExpressionScreen::verifyAndSetExpression(string exp, Student *student)
+{
+
+
+
+	//student->setPoints();
+	//student->save(true);
+	this->parser->parse(exp, student->getCompletedCourses().size());
+	if (this->parser->isError()){
+
+		return false;
+	}
+	else {
+
+		student->setPoints(this->parser->getResult());
+		student->save(true);
+	}
 
 	return true;
 }

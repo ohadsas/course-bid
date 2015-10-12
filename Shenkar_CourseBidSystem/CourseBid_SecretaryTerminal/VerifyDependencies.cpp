@@ -10,9 +10,16 @@
 ** -------------------------------------------------------------------------*/
 #include "VerifyDependencies.h"
 
-bool VerifyDependencies::verify(Course* courseToDelete)
-{
+bool VerifyDependencies::verify(Course* course_to_delete) {
+	FileStorage fs;
+	vector<Course> vec_course = Course::getAllCourses(&fs);
 
+	bool flag = true;
+	for (int i = 0; i < vec_course.size(); i++) {
+		vector<Course> vec_prereq = vec_course[i].getPreequisiteCourses();
+		for (int j = 0; j < vec_prereq.size(); j++)
+			if (vec_prereq[j].getCourseId() == course_to_delete->getCourseId())
+				flag = false;
 
-	return true;
+	return flag;
 }

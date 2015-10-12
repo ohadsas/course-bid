@@ -58,7 +58,7 @@ public:
 	void setEmail(string email)			{ this->email = email; }
 	string getEmail()					{ return email; }
 	void setPassword(string password)	{ this->password = password; }
-	bool verifyPassword(string password){ return this->password.compare(password) == 0 ? true : false; }
+	bool verifyPassword(string password){ this->password.compare(password) == 0 ? true : false; }
 	void setLocked(bool isLocked)		{ this->isLocked = isLocked; }
 	bool getLocked()					{ return isLocked; }
 

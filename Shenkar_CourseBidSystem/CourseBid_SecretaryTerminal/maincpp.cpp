@@ -13,6 +13,7 @@
 #define SECRETARY_TERMINAL
 #include <iostream>
 #include <cstdint>
+
 using namespace std;
 
 
@@ -29,18 +30,22 @@ using namespace std;
 #include "UIErrorScreen.h"
 #include "SecretaryMainScreen.h"
 
+
+
+
+
 //SECRETARY TERMINAL
 int main(int argc, char* argv[])
 {
 
 	//DEMO CALLS TO VERIFY COMPILATION
-//	FileStorage * fs = new FileStorage();
-	
-//	UIScreen * uis = new UIErrorScreen();
-	//UITerminal * uit = new SecretaryTerminal();
-//	SecretaryMainScreen * sms = new SecretaryMainScreen();
+	//	FileStorage * fs = new FileStorage();
 
-	
+	//	UIScreen * uis = new UIErrorScreen();
+	//UITerminal * uit = new SecretaryTerminal();
+	//	SecretaryMainScreen * sms = new SecretaryMainScreen();
+
+
 	try{
 		SecretaryMainScreen *SecretaryScreen = new SecretaryMainScreen();
 		SecretaryScreen->show();

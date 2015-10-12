@@ -9,6 +9,7 @@
 ** Author: Yossi Gleyzer
 ** -------------------------------------------------------------------------*/
 #include "Course.h"
+#include "CircleDetection.h"
 
 /*
 ** Storage tags consts.
@@ -185,7 +186,7 @@ string Course::ToString()
 	{
 		course += " id: " + to_string(c.getCourseId());
 	}
-	course += ">]\n";
+	course += ">]";
 	return course;
 }
 
@@ -201,44 +202,25 @@ string Course::ToString()
 */
 bool Course::setPrerequisiteCourse(Course course)
 {
-	// check course is not already in prerequisiteCourse
-	bool flag = false;
-	for (int i = 0; i < prerequisiteCourses.size(); i++)
-		if (prerequisiteCourses[i].courseId == course.courseId)
-			flag = true;
-	
-	if (flag)
-		return false;
-
-
-	//check if OK before adding:
-	//1. if prerequisite course exist (?)
-	//2. Circle dependencies
-	//FOR MORE INFO Please look at use case diagramm...
-
-	// check for circle
-	string n1, n2;
-	ListDigraph g;
-	CrossRefMap<ListDigraph, ListDigraph::Node, string> names(g);
-	Bfs<ListDigraph> bfs(g);
-
-
-
-
-	prerequisiteCourses.push_back(course);
-	save(true);
-	return true;
+	return setPrerequisiteCourse(course.courseId);
 }
 
-bool Course::setPrerequisiteCourse(long courseId) {
+bool Course::setPrerequisiteCourse(long attach_course_id) {
 	FileStorage storage;// = new FileStorage();
-	Course* course_found = getCourseByCourseId(&storage, courseId);
+	Course* course = getCourseByCourseId(&storage, attach_course_id);
 
-
-
+	if (course == NULL)
+		return false;
+	
 	// save
-	// return
-	return true;
+	std::pair<long, long> course_pair(this->courseId, attach_course_id);
+	if (CircleDetection::detectCircles(course_pair)) { // or maybe return flag only
+		prerequisiteCourses.push_back(*course);
+		save(true);
+		return true;
+	}
+
+	return false;
 }
 
 void Course::removePrerequisiteCourse(Course course) {
@@ -277,6 +259,8 @@ vector<Student*> Course::getStudentListForCourse()
 vector<Course> Course::getPreequisiteCourses() {
 	return prerequisiteCourses;
 }
+
+
 
 /*
 vector<CoursePair*> Course::getCourseDependencies()

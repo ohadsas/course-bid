@@ -20,7 +20,7 @@ class UITerminal;
 
 class UIScreen {
 protected:
-	//UITerminal* terminal;
+	UITerminal* terminal;
 public:
 	UIScreen()
 	{
